@@ -31,7 +31,7 @@
 <meta property="og:description" content="Abstract 主要参考了 Nishimori 的 Statistical Physics of Spin Glasses and Information Processing An Introduction 第二章以及 Haozhe Shan 的笔记 Replica calculations for the SK model.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-07-12T13:19:06.000Z">
-<meta property="article:modified_time" content="2023-07-12T15:42:51.448Z">
+<meta property="article:modified_time" content="2023-07-15T15:35:31.089Z">
 <meta property="article:author" content="Li Yuhao">
 <meta property="article:tag" content="Spin Glass">
 <meta property="article:tag" content="S-K model">
@@ -180,9 +180,15 @@ RSB</span></a></li></ol></div>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-07-12 21:19:06 / 修改时间：23:42:51" itemprop="dateCreated datePublished" datetime="2023-07-12T21:19:06+08:00">2023-07-12</time>
+      <time title="创建时间：2023-07-12 21:19:06" itemprop="dateCreated datePublished" datetime="2023-07-12T21:19:06+08:00">2023-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-07-15 23:35:31" itemprop="dateModified" datetime="2023-07-15T23:35:31+08:00">2023-07-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -264,101 +270,122 @@ q_2 &amp; q_2 &amp; 0 &amp; &amp; &amp; \\
 \end{array}\right)
 \]</span></p>
 <h1 id="first-step-rsb">2. First-step RSB</h1>
-<p><span class="math display">\[
-\sum_{\alpha&lt;\beta} q_{\alpha \beta} S^\alpha
-S^\beta=\frac{1}{2}\left\{q_0\left(\sum_\alpha^n
-S^\alpha\right)^2+\left(q_1-q_0\right) \sum_{\text {block }}^{n /
-m_1}\left(\sum_{\alpha \in \text { block }}^{m_1} S^\alpha\right)^2-n
-q_1\right\}
-\]</span> 以及 <span class="math display">\[
+<p>回顾使用复本对称假设之前的自由能 <span class="math display">\[
+\begin{aligned}
+\beta [f] =\lim_{n \rightarrow 0}\left\{-\frac{\beta^2 J^2}{4}
++\frac{\beta^2 J^2}{2 n} \sum_{\alpha&lt;\beta}q_{\alpha \beta}^2
++\frac{\beta J_0}{2 n} \sum m_\alpha^2 \right. -\left.\frac{1}{n} \log
+\mathrm{Tr~}  \exp (L) \right\}
+\end{aligned}
+\]</span> 其中， <span class="math display">\[
+\begin{equation}
+    L=\beta^2 J^2 \sum_{\alpha&lt;\beta} q_{\alpha \beta} S_i^\alpha
+S_i^\beta +\beta \sum\left(J_0 m_\alpha+h\right)  S_i^\alpha
+\end{equation}
+\]</span> 在1RSB中，仍保留 <span class="math inline">\(m_\alpha\)</span>
+的复本对称假设，有 <span class="math display">\[
 \lim _{n \rightarrow 0} \frac{1}{n} \sum_{\alpha \neq \beta} q_{\alpha
 \beta}^2=\lim _{n \rightarrow 0} \frac{1}{n}\left\{n^2
 q_0^2+\frac{n}{m_1} m_1^2\left(q_1^2-q_0^2\right)-n
 q_1^2\right\}=\left(m_1-1\right) q_1^2-m_1 q_0^2
+\]</span> 以及 <span class="math display">\[
+\sum_{\alpha&lt;\beta} q_{\alpha \beta} S^\alpha
+S^\beta=\frac{1}{2}\left\{q_0\left(\sum^n
+S^\alpha\right)^2+\left(q_1-q_0\right) \sum_{b=1}^{n /
+m_1}\left(\sum_{\alpha \in B_b}^{m_1} S^\alpha\right)^2-n q_1\right\}
+\]</span> 可得 <span class="math display">\[
+\begin{aligned}
+\beta [f_{1RSB}] =\frac{\beta^2 J^2}{4} \Big[ \left(m_1-1\right)
+q_1^2-m_1 q_0^2 -1 \Big] + \frac{\beta^2 J^2}{2} m^2- \lim_{n
+\rightarrow 0}\frac{1}{n} \log \mathrm{Tr~} \exp (L_{1RSB})
+\end{aligned}
+\]</span> 其中 <span class="math display">\[
+L_{1RSB} = \frac{\beta^2 J^2}{2}\left\{q_0\left(\sum^n
+S^\alpha\right)^2+\left(q_1-q_0\right) \sum_{b=1}^{n /
+m_1}\left(\sum_{\alpha \in B_b}^{m_1} S^\alpha\right)^2-n q_1\right\}
++\beta \sum\left(J_0 m+h\right)  S_i^\alpha
+\]</span> 利用HS变换 <span class="math display">\[
+\exp \left[ \frac{\beta^2 J^2 q_0}{2} \left( \sum^n S^\alpha \right)^2
+\right] = \int Du ~\exp\left( \beta J \sqrt{q_0} u \sum^n S^\alpha
+\right)
+\]</span> 以及 <span class="math display">\[
+\begin{aligned}
+\exp \left[ \frac{\beta^2 J^2 \left( q_1-q_0 \right) }{2} \sum_{b=1}^{n
+/ m_1}\left( \sum_{\alpha\in B_b}^{m_1} S^\alpha \right)^2
+\right]&amp;=\prod_{b=1}^{n / m_1} \exp \left[ \frac{\beta^2 J^2 \left(
+q_1-q_0 \right)}{2} \left( \sum_{\alpha\in B_b}^{m_1} S^\alpha \right)^2
+\right] \\
+&amp;=\prod_{b=1}^{n / m_1} \int Dv_b ~\exp \left(\beta J \sqrt{q_1-q_0}
+~v_b\sum_{\alpha\in B_b}^{m_1} S^\alpha \right)
+\end{aligned}
 \]</span></p>
 <p>因此 <span class="math display">\[
+\begin{aligned}
+&amp; \frac{1}{n} \log \mathrm{Tr~} \exp \left(L_{1RSB}\right)\\
+&amp;= \frac{1}{n} \log \mathrm{Tr~} \exp \left( \frac{-\beta^2
+J^2nq_1}{2} \right) \exp \left[ \frac{\beta^2 J^2 q_0}{2} \left( \sum^n
+S^\alpha \right)^2 \right] \\
+&amp;\qquad\qquad\quad\, \exp \left[ \frac{\beta^2 J^2 \left( q_1-q_0
+\right) }{2} \sum_{b=1}^{n / m_1}\left( \sum_{\alpha\in B_b}^{m_1}
+S^\alpha \right)^2 \right] \exp \left( \beta \sum\left(J_0
+m+h\right)  S_i^\alpha \right)\\
+&amp;=-\frac{1}{2} \beta^2 J^2 q_0 + \Delta
+\end{aligned}
+\]</span> 其中 <span class="math display">\[
+\begin{aligned}
+\Delta &amp;= \frac{1}{n} \log \mathrm{Tr~} \int Du ~\exp\left( \beta J
+\sqrt{q_0} u \sum^n S^\alpha + \beta \sum\left(J_0
+m+h\right)  S_i^\alpha \right) \prod_{b=1}^{n / m_1} \int Dv_b ~\exp
+\left(\beta J \sqrt{q_1-q_0}~v_b \sum_{\alpha\in B_b}^{m_1} S^\alpha
+\right) \\
+&amp;= \frac{1}{n} \log \int Du ~\mathrm{Tr~} \prod_{b=1}^{n / m_1}\int
+Dv \exp\left[ \beta J \sqrt{q_0} u \sum^n S^\alpha + \beta \sum\left(J_0
+m+h\right)  S_i^\alpha + \beta J \sqrt{q_1-q_0}~v_b\sum_{\alpha\in
+B_b}^{m_1} S^\alpha\right] \\
+&amp; =\frac{1}{n} \log \int D u \prod_{b=1}^{n / m_1}\int Dv_b
+\sum_{\left\{S^\alpha\right\} \in B_b} \exp
+\left[\sum_{\left\{S^\alpha\right\} \in B_b} \beta\left(J_0 m+h+J
+\sqrt{q_0} u+J \sqrt{q_1-q_0} v_b\right)S^\alpha\right]\\
+&amp; =\frac{1}{n} \log \int D u \prod_{b=1}^{n / m_1}\int D
+v_b\left\{\sum_{S= \pm 1} \exp \Big[S \beta\left(J_0 m+h+\beta J
+\sqrt{q_0} u+J \sqrt{q_1-q_0} v_b\right)\Big]\right\}^{m_1} \\
+&amp; =\frac{1}{n} \log \int D u\left\{\int D v\left\{\sum_{S= \pm 1}
+\exp \Big[ S \beta\left(J_0 m+h+\beta J \sqrt{q_0} u+J \sqrt{q_1-q_0}
+v\right)\Big]\right\}^{m_1}\right\}^{n / m_1} \\
+&amp; =\frac{1}{n} \log \int D u\left\{\int D v\Big\{2 \cosh
+\Big[\beta\left(J_0 m+h+\beta J \sqrt{q_0} u+J \sqrt{q_1-q_0}
+v\right)\Big]\Big\}^{m_1}\right\}^{n / m_1} \\
+&amp; =\frac{1}{n} \log \int D u \exp \left\{\frac{n}{m_1} \log \Big\{
+\int D v\left\{2 \cosh \Big[\beta\left(J_0 m+h+\beta J \sqrt{q_0} u+J
+\sqrt{q_1-q_0} v\right)\Big]\right\}^{m_1}\Big\}\right\}
+\end{aligned}
+\]</span> expand exponent around 0 and expand <span
+class="math inline">\(\log\)</span> around 1 <span
+class="math display">\[
+\begin{aligned}
+\Delta &amp;\approx \frac{1}{n} \log \left\{1+\frac{n}{m_1} \int D u
+\log \left\{\int D v\left\{2 \cosh \Big[\beta\left(J_0 m+h+\beta J
+\sqrt{q_0} u+J \sqrt{q_1-q_0}
+v\right)\Big]\right\}^{m_1}\right\}\right\}\\
+&amp; \approx \frac{1}{n} \frac{n}{m_1} \int D u \log \left\{\int D
+v\left\{2 \cosh \Big[\beta\left(J_0 m+h+\beta J \sqrt{q_0} u+J
+\sqrt{q_1-q_0} v\right)\Big]\right\}^{m_1}\right\} \\
+&amp; =\log 2+\frac{1}{m_1} \int D u \log \left\{\int D v\left\{\cosh
+\Big[\beta\left(J_0 m+h+\beta J \sqrt{q_0} u+J \sqrt{q_1-q_0}
+v\right)\Big]\right\}^{m_1}\right\}
+\end{aligned}
+\]</span> 令 <span class="math display">\[
+\Xi=\beta\left(J_0 m+h+\beta J \sqrt{q_0} u+J \sqrt{q_1-q_0} v\right)
+\]</span> 则有 <span class="math display">\[
+\Delta=\log 2+\frac{1}{m_1} \int D u \log \left\{\int D v(\cosh
+\Xi)^{m_1}\right\}
+\]</span> 最终得到自由能为 <span class="math display">\[
 \begin{aligned}
 \beta f_{1 \mathrm{RSB}}= &amp; \frac{\beta^2 J^2}{4}\Big\{
 \left(m_1-1\right) q_1^2-m_1 q_0^2+2 q_1-1\Big\}\\
 &amp; +\frac{\beta J_0}{2} m^2-\log 2 -\frac{1}{m_1} \int \mathrm{D} u
 \log \int \mathrm{D} v \cosh ^{m_1} \Xi
 \end{aligned}
-\]</span> 其中 <span class="math display">\[
-\Xi= \beta\left(J \sqrt{q_0} u+J \sqrt{q_1-q_0} v+J_0 m+h\right)
-\]</span></p>
-<p>111 <span class="math display">\[
-\begin{aligned}
-&amp; \frac{1}{n} \log \sum_{\left\{S^\alpha, S^\beta, \ldots,
-S^n\right\}} \exp \left(L_{1 R S B}\right) \\
-&amp; =\frac{1}{n} \log \sum_{\left\{S^\alpha, S^\beta, \ldots,
-S^n\right)} \int D u \exp \left(\beta J \sqrt{q_0} u \sum_\alpha
-S^\alpha-\frac{n}{2} \beta^2 J^2 q_0+\sum S^\alpha \beta\left(J_0
-m+h\right)+\left(q_1-q_0\right) \sum_{b=1}^{n / m_1}\left(\sum_{\alpha
-\in B_b}^{m_1} S^\alpha\right)^2\right) \\
-&amp; =-\frac{1}{2} \beta^2 J^2 q_0+\underbrace{\frac{1}{n} \log
-\sum_{\left\{S^\alpha, S^\beta, \ldots, S^n\right)} \int D u \exp
-\left(\sum S^\alpha\left(\beta J \sqrt{q_0} u+\beta\left(J_0
-m+h\right)\right)+\left(q_1-q_0\right) \sum_{b=1}^{n /
-m_1}\left(\sum_{\alpha \in B_b}^{m_1} S^\alpha\right)^2\right)}_{\Delta}
-\end{aligned}
-\]</span></p>
-<p>222</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp; \frac{1}{n} \log \sum_{\left\{S^\alpha, S^\beta, \ldots,\right\}}
-\int D u \prod_{b=1}^{n / m_1}\left(\int D v_b\right) \exp
-\left(\sum_\alpha S^\alpha \beta J \sqrt{q_0} u+\sum_\alpha S^\alpha
-\beta\left(J_0 m+h\right)+\beta J \sqrt{q_1-q_0} \sum_{b=1}^{n / m_1}
-v_b \sum_{\alpha \in B_b}^{m_1} S^\alpha\right) \\
-&amp; =\frac{1}{n} \log \int D u \sum_{\left\{S^\alpha, S^\beta, \ldots,
-S^n\right\}} \prod_{b=1}^{n / m_1}\left\{\int D v \exp \left(\sum_\alpha
-S^\alpha \beta\left(J_0 m+h+\beta J \sqrt{q_0} u\right)\right) \exp
-\left(\beta J \sqrt{q_1-q_0} v \sum_{\alpha \in B_b}^{m_1}
-S^\alpha\right)\right\} \\
-&amp; =\frac{1}{n} \log \int D u \prod_{b=1}^{n / m_1}\left\{\int v_b
-\sum_{\left\{S^\alpha\right\} \in B_b} \exp
-\left(\sum_{\left\{S^\alpha\right\} \in B_b} \beta\left(J_0 m+h+\beta J
-\sqrt{q_0} u+J \sqrt{q_1-q_0} v_b\right)\right)\right\} \\
-&amp; =\frac{1}{n} \log \int D u \prod_{b=1}^{n / m_1}\left\{\int D
-v_b\left\{\sum_{S= \pm 1} \exp \left(S \beta\left(J_0 m+h+\beta J
-\sqrt{q_0} u+J \sqrt{q_1-q_0} v\right)\right)\right\}^{m_1}\right\} \\
-&amp; =\frac{1}{n} \log \int D u\left\{\int D v\left\{\sum_{S= \pm 1}
-\exp \left(S \beta\left(J_0 m+h+\beta J \sqrt{q_0} u+J \sqrt{q_1-q_0}
-v\right)\right)\right\}^{m_1}\right\}^{n / m_1} \\
-&amp; =\frac{1}{n} \log \int D u\left\{\int D v\left\{2 \cosh
-\left(\beta\left(J_0 m+h+\beta J \sqrt{q_0} u+J \sqrt{q_1-q_0}
-v\right)\right)\right\}^{m_1}\right\}^{n / m_1} \\
-&amp; =\frac{1}{n} \log \int D u \exp \left\{\frac{n}{m_1} \log
-\left\{\int D v\left\{2 \cosh \left(\beta\left(J_0 m+h+\beta J
-\sqrt{q_0} u+J \sqrt{q_1-q_0}
-v\right)\right)\right\}^{m_1}\right\}\right\} \\
-&amp; \approx \frac{1}{n} \log \left\{1+\frac{n}{m_1} \int D u \log
-\left\{\int D v\left\{2 \cosh \left(\beta\left(J_0 m+h+\beta J
-\sqrt{q_0} u+J \sqrt{q_1-q_0}
-v\right)\right)\right\}^{m_1}\right\}\right\} \quad \text { expand
-exponent around } 0 \\
-&amp; \approx \frac{1}{n} \frac{n}{m_1} \int D u \log \left\{\int D
-v\left\{2 \cosh \left(\beta\left(J_0 m+h+\beta J \sqrt{q_0} u+J
-\sqrt{q_1-q_0} v\right)\right)\right\}^{m_1}\right\} \quad \text {
-expand } \log \text { around } 1 \\
-&amp; =\log 2+\frac{1}{m_1} \int D u \log \left\{\int D v\left\{\cosh
-\left(\beta\left(J_0 m+h+\beta J \sqrt{q_0} u+J \sqrt{q_1-q_0}
-v\right)\right)\right\}^{m_1}\right\} \quad \text { pull the factor of }
-2 \text { out } \\
-&amp;
-\end{aligned}
-\]</span> Letting <span class="math display">\[
-\Xi=\beta\left(J_0 m+h+\beta J \sqrt{q_0} u+J \sqrt{q_1-q_0} v\right) .
-\]</span> We have <span class="math display">\[
-\Delta=\log 2+\frac{1}{m_1} \int D u \log \left\{\int D v\{\cosh
-\Xi\}^{m_1}\right\} .
-\]</span> Plugging this back into the expression for <span
-class="math inline">\(\beta\left[f_{1 R S B}\right]\)</span> to get
-<span class="math display">\[
-\beta\left[f_{1 R S B}\right]=\frac{\beta^2
-J^2}{4}\left\{\left(m_1-1\right) q_1^2-m_1 q_0^2+2
-q_1-1\right\}+\frac{\beta J_0}{2} m^2-\log 2-\frac{1}{m_1} \int D u \log
-\left\{\int D v\{\cosh \Xi\}^{m_1}\right\}
 \]</span></p>
 <p>得到 <span class="math display">\[
 \begin{aligned}
@@ -367,12 +394,212 @@ q_1-1\right\}+\frac{\beta J_0}{2} m^2-\log 2-\frac{1}{m_1} \int D u \log
 &amp; q_0=\int \mathrm{D} u\left(\frac{\int \mathrm{D} v \cosh ^{m_1}
 \Xi \tanh \Xi}{\int \mathrm{D} v \cosh ^{m_1} \Xi}\right)^2 \\
 &amp; q_1=\int \mathrm{D} u \frac{\int \mathrm{D} v \cosh ^{m_1} \Xi
-\tanh ^2 \Xi}{\int \mathrm{D} v \cosh ^{m_1} \Xi} .
+\tanh ^2 \Xi}{\int \mathrm{D} v \cosh ^{m_1} \Xi}
 \end{aligned}
 \]</span></p>
 <h1 id="stability-of-the-first-step-rsb">3. Stability of the first step
 RSB</h1>
+<p>3.2.3 Stability of the first step RSB The stability of 1RSB can be
+investigated by a direct generalization of the argument in <span
+class="math inline">\(\S 3.1\)</span>. We mention only a few main points
+for the case <span class="math inline">\(J_0=h=0\)</span>. It is
+sufficient to treat two cases: one with all indices <span
+class="math inline">\(\alpha, \beta, \gamma, \delta\)</span> of the
+Hessian elements within the same block and the other with indices in two
+different blocks.</p>
+<p>If <span class="math inline">\(\alpha\)</span> and <span
+class="math inline">\(\beta\)</span> in <span
+class="math inline">\(q_{\alpha \beta}\)</span> belong to the same
+block, the stability condition of the replicon mode for infinitesimal
+deviations from 1RSB is expressed as <span class="math display">\[
+\lambda_3=P-2 Q+R=1-\beta^2 J^2 \int \mathrm{D} u \frac{\int \mathrm{D}
+v \cosh ^{m_1-4} \Xi}{\int \mathrm{D} v \cosh ^{m_1} \Xi}&gt;0 .
+\]</span> For the replicon mode between two different blocks, the
+stability condition reads <span class="math display">\[
+\lambda_3=P-2 Q+R=1-\beta^2 J^2 \int \mathrm{D} u\left(\frac{\int
+\mathrm{D} v \cosh ^{m_1-1} \Xi}{\int \mathrm{D} v \cosh ^{m_1}
+\Xi}\right)^4&gt;0 .
+\]</span> According to the Schwarz inequality, the right hand side of
+(3.35) is less than or equal to that of (3.36), and therefore the former
+is sufficient. Equation (3.35) is not satisfied in the spin glass phase
+similar to the case of the RSB solution. However, the absolute value of
+the eigenvalue is confirmed by numerical evaluation to be smaller than
+that of the RS solution although <span
+class="math inline">\(\lambda_3\)</span> is still negative. This
+suggests an improvement towards a stable solution. The entropy per spin
+at <span class="math inline">\(J_0=0, T=0\)</span> reduces from <span
+class="math inline">\(-0.16(=-1 / 2 \pi)\)</span> for the RS solution to
+-0.01 for the 1RSB. Thus we may expect to obtain still better results if
+we go further into replica symmetry breaking.</p>
 <h1 id="full-rsb-solution">4. Full RSB solution</h1>
+<p>3.3 Full RSB solution Let us proceed with the calculation of the free
+energy (2.17) by a multiple-step RSB. We restrict ourselves to the case
+<span class="math inline">\(J_0=0\)</span> for simplicity. 3.3.1
+Physical quantities The sum involving <span
+class="math inline">\(q_{\alpha \beta}^2\)</span> in the free energy
+(2.17) can be expressed at the <span class="math inline">\(K\)</span> th
+step of RSB ( <span class="math inline">\(K\)</span>-RSB) as follows by
+counting the number of elements in a similar way to the 1RSB case
+(3.29): <span class="math display">\[
+\begin{aligned}
+&amp; \sum_{\alpha \neq \beta} q_{\alpha \beta}^l \\
+&amp; =q_0^l n^2+\left(q_1^l-q_0^l\right) m_1^2 \cdot
+\frac{n}{m_1}+\left(q_2^l-q_1^l\right) m_2^2 \cdot \frac{m_1}{m_2} \cdot
+\frac{n}{m_1}+\cdots-q_K^l \cdot n \\
+&amp; =n \sum_{j=0}^K\left(m_j-m_{j+1}\right) q_j^l,
+\end{aligned}
+\]</span> where <span class="math inline">\(l\)</span> is an arbitrary
+integer and <span class="math inline">\(m_0=n, m_{K+1}=1\)</span>. In
+the limit <span class="math inline">\(n \rightarrow 0\)</span>, we may
+use the replacement <span class="math inline">\(m_j-m_{j+1}
+\rightarrow-\mathrm{d} x\)</span> to find</p>
+<p><span class="math display">\[
+\frac{1}{n} \sum_{\alpha \neq \beta} q_{\alpha \beta}^l
+\rightarrow-\int_0^1 q^l(x) \mathrm{d} x
+\]</span> The internal energy for <span class="math inline">\(J_0=0,
+h=0\)</span> is given by differentiation of the free energy (2.17) by
+<span class="math inline">\(\beta\)</span> as <span
+class="math inline">\(^2\)</span> <span class="math display">\[
+E=-\frac{\beta J^2}{2}\left(1+\frac{2}{n} \sum_{\alpha&lt;\beta}
+q_{\alpha \beta}^2\right) \rightarrow-\frac{\beta
+J^2}{2}\left(1-\int_0^1 q^2(x) \mathrm{d} x\right) .
+\]</span> The magnetic susceptibility can be written down from the
+second derivative of (2.17) by <span class="math inline">\(h\)</span> as
+<span class="math display">\[
+\chi=\beta\left(1+\frac{1}{n} \sum_{\alpha \neq \beta} q_{\alpha
+\beta}\right) \rightarrow \beta\left(1-\int_0^1 q(x) \mathrm{d} x\right)
+.
+\]</span> It needs some calculations to derive the free energy in the
+full RSB scheme. Details are given in Appendix B. The final expression
+of the free energy (2.17) is <span class="math display">\[
+\beta f=-\frac{\beta^2 J^2}{4}\left\{1+\int_0^1 q(x)^2 \mathrm{~d} x-2
+q(1)\right\}-\int \mathrm{D} u f_0(0, \sqrt{q(0)} u) .
+\]</span> Here <span class="math inline">\(f_0\)</span> satisfies the
+Parisi equation <span class="math display">\[
+\frac{\partial f_0(x, h)}{\partial x}=-\frac{J^2}{2} \frac{\mathrm{d}
+q}{\mathrm{~d} x}\left\{\frac{\partial^2 f_0}{\partial
+h^2}+x\left(\frac{\partial f_0}{\partial h}\right)^2\right\}
+\]</span> to be solved under the initial condition <span
+class="math inline">\(f_0(1, h)=\log 2 \cosh \beta h\)</span>.</p>
+<p>3.3.2 Order parameter near the critical point It is in general very
+difficult to find a solution to the extremization condition of the free
+energy (3.41) with respect to the order function <span
+class="math inline">\(q(x)\)</span>. It is nevertheless possible to
+derive some explicit results by the Landau expansion when the
+temperature is close to the critical point and consequently <span
+class="math inline">\(q(x)\)</span> is small. Let us briefly explain the
+essence of this procedure.</p>
+<p>When <span class="math inline">\(J_0=h=0\)</span>, the expansion of
+the free energy (2.17) to fourth order in <span
+class="math inline">\(q_{\alpha \beta}\)</span> turns out to be <span
+class="math display">\[
+\begin{aligned}
+\beta f= &amp; \lim _{n \rightarrow 0}
+\frac{1}{n}\left\{\frac{1}{4}\left(\frac{T^2}{T_{\mathrm{f}}^2}-1\right)
+\operatorname{Tr} Q^2-\frac{1}{6} \operatorname{Tr} Q^3\right. \\
+&amp; \left.-\frac{1}{8} \operatorname{Tr} Q^4+\frac{1}{4} \sum_{\alpha
+\neq \beta \neq \gamma} Q_{\alpha \beta}^2 Q_{\alpha
+\gamma}^2-\frac{1}{12} \sum_{\alpha \neq \beta} Q_{\alpha
+\beta}^4\right\},
+\end{aligned}
+\]</span> where we have dropped <span
+class="math inline">\(q\)</span>-independent terms. The operator Tr here
+denotes the diagonal sum in the replica space. We have introduced the
+notation <span class="math inline">\(Q_{\alpha \beta}=(\beta J)^2
+q_{\alpha \beta}\)</span>. Only the last term is relevant to the RSB. It
+can indeed be verified that the eigenvalue of the replicon mode that
+determines stability of the RS solution is, by setting the coefficient
+of the last term to <span class="math inline">\(-y\)</span> (which is
+actually <span class="math inline">\(-1 / 12)\)</span> <span
+class="math display">\[
+\lambda_3=-16 y \theta^2,
+\]</span> where <span
+class="math inline">\(\theta=\left(T_{\mathrm{f}}-T\right) /
+T_{\mathrm{f}}\)</span>. We may thus neglect all fourth-order terms
+except <span class="math inline">\(Q_{\alpha \beta}^4\)</span> to
+discuss the essential features of the RSB and let <span
+class="math inline">\(n \rightarrow 0\)</span> to get <span
+class="math display">\[
+\beta f=\frac{1}{2} \int_0^1 \mathrm{~d} x\left\{|\theta|
+q^2(x)-\frac{1}{3} x q^3(x)-q(x) \int_0^x q^2(y) \mathrm{d}
+y+\frac{1}{6} q^4(x)\right\} .
+\]</span> The extremization condition with respect to <span
+class="math inline">\(q(x)\)</span> is written explicitly as <span
+class="math display">\[
+2|\theta| q(x)-x q^2(x)-\int_0^x q^2(y) \mathrm{d} y-2 q(x) \int_x^1
+q(y) \mathrm{d} y+\frac{2}{3} q^3(x)=0 .
+\]</span> Differentiation of this formula gives <span
+class="math display">\[
+|\theta|-x q(x)-\int_x^1 q(y) \mathrm{d} y+q^2(x)=0 \quad \text { or }
+\quad q^{\prime}(x)=0 .
+\]</span> Still further differentiation leads to <span
+class="math display">\[
+q(x)=\frac{x}{2} \quad \text { or } \quad q^{\prime}(x)=0 .
+\]</span> The RS solution corresponds to a constant <span
+class="math inline">\(q(x)\)</span>. This constant is equal to <span
+class="math inline">\(|\theta|\)</span> according to (3.46). There also
+exists an <span class="math inline">\(x\)</span>-dependent solution
+<span class="math display">\[
+\begin{aligned}
+&amp; q(x)=\frac{x}{2} \quad\left(0 \leq x \leq x_1=2 q(1)\right) \\
+&amp; q(x)=q(1) \quad\left(x_1 \leq x \leq 1\right) .
+\end{aligned}
+\]</span> By inserting this solution in the variational condition
+(3.46), we obtain <span class="math display">\[
+q(1)=|\theta|+\mathcal{O}\left(\theta^2\right)
+\]</span> Figure 3.2 shows the resulting behaviour of <span
+class="math inline">\(q(x)\)</span> near the critical point where <span
+class="math inline">\(\theta\)</span> is close to zero.</p>
+<p>The susceptibility is a constant <span class="math inline">\(\chi=1 /
+J\)</span> near the critical point <span
+class="math inline">\(T_{\mathrm{f}}\)</span> because the integral in
+(3.40) is <span class="math inline">\(1-T / T_{\mathrm{f}}\)</span>
+according to (3.49)-(3.51). It turns out in fact that this result
+remains valid not only near <span
+class="math inline">\(T_{\mathrm{f}}\)</span> but over the whole
+temperature range below the critical point. We use this fact to show
+that the phase boundary between the spin glass and ferromagnetic phases
+is a vertical line at <span class="math inline">\(J_0=J\)</span> as in
+Fig. 2.1 (Toulouse 1980).</p>
+<p>The Hamiltonian of the SK model (2.7) suggests that a change of the
+centre of distribution of <span class="math inline">\(J_{i j}\)</span>
+from 0 to <span class="math inline">\(J_0 / N\)</span> shifts the energy
+per spin by <span class="math inline">\(-J_0 \mathrm{~m}^2 / 2\)</span>.
+Thus the free energy <span class="math inline">\(f\left(T, m,
+J_0\right)\)</span> as a function of <span
+class="math inline">\(T\)</span> and <span
+class="math inline">\(m\)</span> satisfies <span class="math display">\[
+f\left(T, m, J_0\right)=f(T, m, 0)-\frac{1}{2} J_0 m^2 .
+\]</span> From the thermodynamic relation <span class="math display">\[
+\frac{\partial f(T, m, 0)}{\partial m}=h
+\]</span> and the fact that <span class="math inline">\(m=0\)</span>
+when <span class="math inline">\(J_0=0\)</span> and <span
+class="math inline">\(h=0\)</span>, we obtain <span
+class="math display">\[
+\left.\left.\chi^{-1}=\left(\frac{\partial m}{\partial h}\right]_{h
+\rightarrow 0}\right)^{-1}=\frac{\partial^2 f(T, m, 0)}{\partial
+m^2}\right]_{m \rightarrow 0} .
+\]</span> Thus, for sufficiently small <span
+class="math inline">\(m\)</span>, we have <span class="math display">\[
+f(T, m, 0)=f_0(T)+\frac{1}{2} \chi^{-1} m^2 .
+\]</span> Combining (3.52) and (3.55) gives <span
+class="math display">\[
+f\left(T, m, J_0\right)=f_0(T)+\frac{1}{2}\left(\chi^{-1}-J_0\right) m^2
+.
+\]</span> This formula shows that the coefficient of <span
+class="math inline">\(m^2\)</span> in <span
+class="math inline">\(f\left(T, m, J_0\right)\)</span> vanishes when
+<span class="math inline">\(\chi=\)</span> <span class="math inline">\(1
+/ J_0\)</span> and therefore there is a phase transition between the
+ferromagnetic and non-ferromagnetic phases according to the Landau
+theory. Since <span class="math inline">\(\chi=1 / J\)</span> in the
+whole range <span class="math inline">\(T&lt;T_{\mathrm{f}}\)</span>, we
+conclude that the boundary between the ferromagnetic and spin glass
+phases exists at <span class="math inline">\(J_0=J\)</span>.</p>
+<p>Stability analysis of the Parisi solution has revealed that the
+eigenvalue of the replicon mode is zero, implying marginal stability of
+the Parisi RSB solution. No other solutions have been found with a
+non-negative replicon eigenvalue of the Hessian.</p>
 <h1 id="physical-significance-of-rsb">5. Physical significance of
 RSB</h1>
 
