@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="[object Object]">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Abstract 主要参考了 Nishimori 的 Statistical Physics of Spin Glasses and Information Processing An Introduction 第二章以及 Haozhe Shan 的笔记 Replica calculations for the SK model.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SKmodel-5 | TAP 方程与 Cavity 方法">
+<meta property="og:url" content="http://example.com/2023/07/17/SKmodel-5/index.html">
+<meta property="og:site_name" content="Li Yuhao&#39;s Blog">
+<meta property="og:description" content="Abstract 主要参考了 Nishimori 的 Statistical Physics of Spin Glasses and Information Processing An Introduction 第二章以及 Haozhe Shan 的笔记 Replica calculations for the SK model.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-17T07:29:08.000Z">
+<meta property="article:modified_time" content="2023-07-17T07:40:40.138Z">
+<meta property="article:author" content="Li Yuhao">
+<meta property="article:tag" content="Spin Glass">
+<meta property="article:tag" content="S-K model">
+<meta property="article:tag" content="TAP equation">
+<meta property="article:tag" content="cavity method">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2023/07/17/SKmodel-5/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/07/17/SKmodel-5/","path":"2023/07/17/SKmodel-5/","title":"SKmodel-5 | TAP 方程与 Cavity 方法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>SKmodel-5 | TAP 方程与 Cavity 方法 | Li Yuhao's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Li Yuhao's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li><li class="menu-item menu-item-essay"><a href="/essay/" rel="section"><i class="fa fa-pencil fa-fw"></i>Essay</a></li><li class="menu-item menu-item-home"><a href="https://www.lyhspace.com/" rel="section" target="_blank"><i class="fa fa-home fa-fw"></i>Home</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tap-equation"><span class="nav-number">1.</span> <span class="nav-text">3.5.1 TAP equation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cavity-method"><span class="nav-number">2.</span> <span class="nav-text">3.5.2 Cavity method</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#properties-of-the-solution"><span class="nav-number">3.</span> <span class="nav-text">3.5.3 Properties of the
+solution</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Li Yuhao"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Li Yuhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/17/SKmodel-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Li Yuhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Li Yuhao's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="SKmodel-5 | TAP 方程与 Cavity 方法 | Li Yuhao's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SKmodel-5 | TAP 方程与 Cavity 方法
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-07-17 15:29:08 / 修改时间：15:40:40" itemprop="dateCreated datePublished" datetime="2023-07-17T15:29:08+08:00">2023-07-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Note/" itemprop="url" rel="index"><span itemprop="name">Note</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Note/SpinGlass/" itemprop="url" rel="index"><span itemprop="name">SpinGlass</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote>
+<p><strong>Abstract</strong><br />
+主要参考了 Nishimori 的 <a
+target="_blank" rel="noopener" href="https://searchworks.stanford.edu/view/4790812"><em>Statistical
+Physics of Spin Glasses and Information Processing An
+Introduction</em></a> 第二章以及 Haozhe Shan 的笔记 <a
+target="_blank" rel="noopener" href="https://hzshan.github.io/replica_method_in_SK_model.pdf"><em>Replica
+calculations for the SK model</em></a>.</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="tap-equation">3.5.1 TAP equation</h1>
+<p>The local magnetization of the SK model satisfies the following TAP
+equation, given the random interactions <span
+class="math inline">\(\boldsymbol{J}=\left\{J_{i j}\right\}\)</span> :
+<span class="math display">\[
+m_i=\tanh \beta\left\{\sum_j J_{i j} m_j+h_i-\beta \sum_j J_{i
+j}^2\left(1-m_j^2\right) m_i\right\} .
+\]</span> The first term on the right hand side represents the usual
+internal field, a generalization of (1.19). The third term is called the
+reaction field of Onsager and is added to remove the effects of
+self-response in the following sense. The magnetization <span
+class="math inline">\(m_i\)</span> affects site <span
+class="math inline">\(j\)</span> through the internal field <span
+class="math inline">\(J_{i j} m_i\)</span> that changes the
+magnetization of site <span class="math inline">\(j\)</span> by the
+amount <span class="math inline">\(\chi_{j j} J_{i j} m_i\)</span>. Here
+<span class="math display">\[
+\chi_{j j}=\left.\frac{\partial m_j}{\partial h_j}\right|_{h_j
+\rightarrow 0}=\beta\left(1-m_j^2\right) .
+\]</span> Then the internal field at site <span
+class="math inline">\(i\)</span> would increase by <span
+class="math display">\[
+J_{i j} \chi_{j j} J_{i j} m_i=\beta J_{i j}^2\left(1-m_j^2\right) m_i .
+\]</span> The internal field at site <span
+class="math inline">\(i\)</span> should not include such a rebound of
+itself. The third term on the right hand side of (3.70) removes this
+effect. In a usual ferromagnet with infinite-range interactions, the
+interaction scales as <span class="math inline">\(J_{i j}=J / N\)</span>
+and the third term is negligible since it is of <span
+class="math inline">\(\mathcal{O}(1 / N)\)</span>. In the SK model,
+however, we have <span class="math inline">\(J_{i j}^2=\mathcal{O}(1 /
+N)\)</span> and the third term is of the same order as the first and
+second terms and cannot be neglected. The TAP equation gives a basis to
+treat the spin glass problem without taking the configurational average
+over the distribution of <span
+class="math inline">\(\boldsymbol{J}\)</span>.</p>
+<p>The TAP equation (3.70) corresponds to the extremization condition of
+the following free energy: <span class="math display">\[
+\begin{aligned}
+f_{\mathrm{TAP}}= &amp; -\frac{1}{2} \sum_{i \neq j} J_{i j} m_i
+m_j-\sum_i h_i m_i-\frac{\beta}{4} \sum_{i \neq j} J_{i
+j}^2\left(1-m_i^2\right)\left(1-m_j^2\right) \\
+&amp; +\frac{T}{2} \sum_i\left\{\left(1+m_i\right) \log
+\frac{1+m_i}{2}+\left(1-m_i\right) \log \frac{1-m_i}{2}\right\} .
+\end{aligned}
+\]</span> The first and second terms on the right hand side are for the
+internal energy, and the final term denotes the entropy. The third term
+corresponds to the reaction field.</p>
+<p>This free energy can be derived from an expansion of the free energy
+with magnetization specified <span class="math display">\[
+-\beta \tilde{f}(\alpha, \beta, \boldsymbol{m})=\log \operatorname{Tr}
+\mathrm{e}^{-\beta H(\alpha)}-\beta \sum_i h_i m_i,
+\]</span> where <span class="math inline">\(H(\alpha)=\alpha H_0-\sum_i
+h_i S_i\)</span> and <span
+class="math inline">\(\boldsymbol{m}=\left\{m_i\right\}\)</span>. The
+Hamiltonian <span class="math inline">\(H_0\)</span> denotes the usual
+SK model, and <span class="math inline">\(h_i(\alpha, \beta,
+\boldsymbol{m})\)</span> is the Lagrange multiplier to enforce the
+constraint <span class="math inline">\(m_i=\left\langle
+S_i\right\rangle_\alpha\)</span>, where <span
+class="math inline">\(\langle\cdot\rangle_\alpha\)</span> is the thermal
+average with <span class="math inline">\(H(\alpha)\)</span>. Expanding
+<span class="math inline">\(\tilde{f}\)</span> to second order in <span
+class="math inline">\(\alpha\)</span> around <span
+class="math inline">\(\alpha=0\)</span> and setting <span
+class="math inline">\(\alpha\)</span> equal to one, we can derive
+(3.73). This is called the Plefka expansion (Plefka 1982). To see it,
+let us first carry out the differentiations <span
+class="math display">\[
+\begin{aligned}
+&amp; \frac{\partial \tilde{f}}{\partial \alpha}=\left\langle
+H_0\right\rangle_\alpha \\
+&amp; \frac{\partial^2 \tilde{f}}{\partial \alpha^2}=-\beta\left\langle
+H_0\left(H_0-\left\langle H_0\right\rangle_\alpha-\sum_i \frac{\partial
+h_i}{\partial \alpha}\left(S_i-m_i\right)\right)\right\rangle_\alpha .
+\end{aligned}
+\]</span> The first two terms of the expansion <span
+class="math inline">\(\tilde{f}(1) \approx
+\tilde{f}(0)+\tilde{f}^{\prime}(0)\)</span> give <span
+class="math inline">\((3.73)\)</span> except the Onsager term with <span
+class="math inline">\(J_{i j}^2\)</span> since <span
+class="math display">\[
+\begin{aligned}
+\tilde{f}(0) &amp; =T \sum_i\left(\frac{1+m_i}{2} \log
+\frac{1+m_i}{2}+\frac{1-m_i}{2} \log \frac{1-m_i}{2}\right) \\
+\tilde{f}^{\prime}(0) &amp; =-\frac{1}{2} \sum_{i \neq j} J_{i j} m_i
+m_j .
+\end{aligned}
+\]</span> The second derivative (3.76) can be evaluated at <span
+class="math inline">\(\alpha=0\)</span> from the relation <span
+class="math display">\[
+\left.\left.\frac{\partial h_i}{\partial
+\alpha}\right]_{\alpha=0}=\frac{\partial}{\partial \alpha}
+\frac{\partial \tilde{f}}{\partial m_i}\right]_{\alpha=0}=-\sum_{j(\neq
+i)} J_{i j} m_j .
+\]</span> Inserting this relation into (3.76) we find <span
+class="math display">\[
+\tilde{f}^{\prime \prime}(0)=-\frac{1}{2} \beta \sum_{i \neq j} J_{i
+j}^2\left(1-m_i^2\right)\left(1-m_j^2\right)
+\]</span> which gives the Onsager term in (3.73). It has hence been
+shown that <span class="math inline">\(f_{\mathrm{TAP}}=\)</span> <span
+class="math inline">\(\tilde{f}(0)+\tilde{f}^{\prime}(0)+\tilde{f}^{\prime
+\prime}(0) / 2\)</span>. It can also be shown that the convergence
+condition of the above expansion for <span class="math inline">\(\alpha
+\geq 1\)</span> is equivalent to the stability condition of the free
+energy that the eigenvalues of the Hessian <span
+class="math inline">\(\left\{\partial^2 f_{\mathrm{TAP}} / \partial m_i
+\partial m_j\right\}\)</span> be non-negative. All higher order terms in
+the expansion vanish in the thermodynamic limit as long as the stability
+condition is satisfied.</p>
+<h1 id="cavity-method">3.5.2 Cavity method</h1>
+<p>The cavity method is useful to derive the TAP equation from a
+different perspective (Mézard et al. 1986, 1987). It also attracts
+attention in relation to practical algorithms to solve information
+processing problems (Opper and Saad 2001). The argument in the present
+section is restricted to the case of the SK model for simplicity (Opper
+and Winther 2001).</p>
+<p>Let us consider the local magnetization <span
+class="math inline">\(m_i=\left\langle S_i\right\rangle\)</span>, where
+the thermal average is taken within a single valley. The goal is to show
+that this local magnetization satisfies the TAP equation. For this
+purpose it suffices to derive the distribution function of local spin
+<span class="math inline">\(P_i\left(S_i\right)\)</span>, with which the
+above thermal average is carried out. It is assumed for simplicity that
+there is no external field <span class="math inline">\(h_i=0\)</span>.
+The local magnetization is determined by the local field <span
+class="math inline">\(\tilde{h}_i=\sum_j J_{i j} S_j\)</span>. Hence the
+joint distribution of <span class="math inline">\(S_i\)</span> and <span
+class="math inline">\(\tilde{h}_i\)</span> can be written as <span
+class="math display">\[
+P\left(S_i, \tilde{h}_i\right) \propto \mathrm{e}^{\beta \bar{h}_i S_i}
+P\left(\tilde{h}_i \backslash S_i\right),
+\]</span> where <span class="math inline">\(P\left(\tilde{h}_i
+\backslash S_i\right)\)</span> is the distribution of the local field
+when the spin <span class="math inline">\(S_i\)</span> is removed from
+the system (i.e. when we set <span class="math inline">\(J_{i
+j}=0\)</span> for all <span class="math inline">\(j\)</span> ) (cavity
+field). More explicitly, <span class="math display">\[
+P\left(\tilde{h}_i \backslash S_i\right) \equiv
+\operatorname{Tr}_{\boldsymbol{S} \backslash S_i}
+\delta\left(\tilde{h}_i-\sum_j J_{i j} S_j\right) P\left(\boldsymbol{S}
+\backslash S_i\right),
+\]</span> where <span class="math inline">\(P\left(S \backslash
+S_i\right)\)</span> is the probability distribution of the whole system
+without <span class="math inline">\(S_i\)</span> <span
+class="math inline">\(\left(J_{i j}=0\right.\)</span> for all <span
+class="math inline">\(\left.j\right)\)</span>. The distribution <span
+class="math display">\[
+P_i\left(S_i\right) \propto \int \mathrm{d} \tilde{h}_i
+\mathrm{e}^{\beta \bar{h}_i S_i} P\left(\tilde{h}_i \backslash
+S_i\right)
+\]</span> is thus determined once <span
+class="math inline">\(P\left(\tilde{h}_i \backslash S_i\right)\)</span>
+is known. In the SK model the range of interaction is unlimited and the
+number of terms appearing in the sum <span class="math inline">\(\sum_j
+J_{i j} S_j\)</span> is <span class="math inline">\(N-1\)</span>. If all
+these terms are independent and identically distributed, then the
+central limit theorem assures that the cavity field <span
+class="math inline">\(\tilde{h}_i\)</span> is Gaussian distributed. This
+is certainly the case on the Bethe lattice (Fig. 3.6) that breaks up
+into independent trees as soon as a site is removed. Let us assume that
+this is also true for the SK model in which the correlations of
+different sites are weak. We then have <span class="math display">\[
+P\left(\tilde{h}_i \backslash S_i\right)=\frac{1}{\sqrt{2 \pi V_i^2}}
+\exp
+\left\{-\frac{\left(\tilde{h}_i-\left\langle\tilde{h}_i\right\rangle_{\backslash
+i}\right)^2}{2 V_i}\right\} .
+\]</span> Combination of this Gaussian form and (3.83) yields <span
+class="math display">\[
+m_i=\tanh \beta\left\langle\tilde{h}_i\right\rangle_{\backslash i}
+\]</span> It is therefore necessary to evaluate the average <span
+class="math inline">\(\left\langle\tilde{h}_i\right\rangle_{\backslash
+i}\)</span>. The standard average of the local field (without the
+cavity), <span class="math display">\[
+\left\langle\tilde{h}_i\right\rangle=\operatorname{Tr}_{S_i} \int
+\mathrm{d} \tilde{h}_i \tilde{h}_i P\left(S_i, \tilde{h}_i\right),
+\]</span> together with the Gaussian cavity field (3.84) leads to the
+relation <span class="math display">\[
+\left\langle\tilde{h}_i\right\rangle=\left\langle\tilde{h}_i\right\rangle_{\backslash
+i}+V_i\left\langle S_i\right\rangle
+\]</span> or, in terms of <span class="math inline">\(m_i\)</span>,
+<span class="math display">\[
+\left\langle\tilde{h}_i\right\rangle_{\backslash i}=\sum_j J_{i j}
+m_j-V_i m_i
+\]</span> We then have to evaluate the variance of the local field <span
+class="math display">\[
+V_i=\sum_{j, k} J_{i j} J_{i k}\left(\left\langle S_j
+S_k\right\rangle_{\backslash i}-\left\langle
+S_j\right\rangle_{\backslash i}\left\langle S_k\right\rangle_{\backslash
+i}\right)
+\]</span> Only the diagonal terms <span
+class="math inline">\((j=k)\)</span> survive in the above sum because of
+the clustering property in a single valley <span class="math display">\[
+\frac{1}{N^2} \sum_{j, k}\left(\left\langle S_k
+S_j\right\rangle-\left\langle S_k\right\rangle\left\langle
+S_j\right\rangle\right)^2 \rightarrow 0
+\]</span> as <span class="math inline">\(N \rightarrow \infty\)</span>
+as well as the independence of <span class="math inline">\(J_{i
+j}\)</span> and <span class="math inline">\(J_{i k}(j \neq k)\)</span>.
+We then have <span class="math display">\[
+V_i \approx \sum_j J_{i j}^2\left(1-\left\langle
+S_j\right\rangle_{\backslash i}^2\right) \approx \sum_j J_{i
+j}^2\left(1-\left\langle S_j\right\rangle^2\right)=\sum_j J_{i
+j}^2\left(1-m_j^2\right) .
+\]</span> From this, (3.85), and (3.88), we arrive at the TAP equation
+(3.70).</p>
+<p>The equations of state within the RS ansatz (2.28) and (2.30) can be
+derived from the TAP equation with the cavity method taken into account.
+We first separate the interaction <span class="math inline">\(J_{i
+j}\)</span> into the ferromagnetic and random terms, <span
+class="math display">\[
+J_{i j}=\frac{J_0}{N}+\frac{J}{\sqrt{N}} z_{i j}
+\]</span> where <span class="math inline">\(z_{i j}\)</span> is a
+Gaussian random variable with vanishing mean and unit variance. Then
+(3.88) is <span class="math display">\[
+\left\langle\tilde{h}_i\right\rangle_{\backslash i}=\frac{J_0}{N} \sum_j
+m_j+\frac{J}{\sqrt{N}} \sum_j z_{i j} m_j-V_i m_i .
+\]</span> The first term on the right hand side is identified with <span
+class="math inline">\(J_0 m\)</span>, where <span
+class="math inline">\(m\)</span> is the ferromagnetic order parameter.
+The effects of the third term, the cavity correction, can be taken into
+account by treating only the second term under the assumption that each
+term <span class="math inline">\(z_{i j} m_j\)</span> is an independent
+quenched random variable; the whole expression of (3.93) is the thermal
+average of the cavity field and therefore the contribution from one site
+<span class="math inline">\(j\)</span> would not interfere with that
+from another site <span class="math inline">\(j\)</span>. Then the
+second term is Gaussian distributed according to the central limit
+theorem. The mean vanishes and the variance is <span
+class="math display">\[
+\sum_j \sum_k\left[z_{i j} z_{i k}\right] m_j m_k=\sum_j m_j^2=N q .
+\]</span> Thus the second term (with the third term taken into account)
+is expressed as <span class="math inline">\(\sqrt{N q} z\)</span> with
+<span class="math inline">\(z\)</span> being a Gaussian quenched random
+variable with vanishing mean and variance unity. Hence, averaging (3.85)
+over the distribution of <span class="math inline">\(z\)</span>, we find
+<span class="math display">\[
+m=\int \mathrm{D} z \tanh \beta\left(J_0 m+\sqrt{J q} z\right),
+\]</span> which is the RS equation of state (2.28). Averaging the square
+of (3.85) gives (2.30). One should remember that the amount of
+information in the TAP equation is larger than that of the RS equations
+of state because the former is a set of equations for <span
+class="math inline">\(N\)</span> variables whereas the latter is for the
+macroscopic order parameters <span class="math inline">\(m\)</span> and
+<span class="math inline">\(q\)</span>. It is also possible to derive
+the results of RSB calculations with more elaborate arguments (Mézard et
+al. 1986).</p>
+<h1 id="properties-of-the-solution">3.5.3 Properties of the
+solution</h1>
+<p>To investigate the behaviour of the solution of the TAP equation
+(3.70) around the spin glass transition point, we assume that both the
+<span class="math inline">\(m_i\)</span> and <span
+class="math inline">\(h_i\)</span> are small and expand the right hand
+side to first order to obtain <span class="math display">\[
+m_i=\beta \sum_j J_{i j} m_j+\beta h_i-\beta^2 J^2 m_i
+\]</span></p>
+<p>This linear equation (3.96) can be solved by the eigenvalues and
+eigenvectors of the symmetric matrix <span
+class="math inline">\(J\)</span>. Let us for this purpose expand <span
+class="math inline">\(J_{i j}\)</span> by its eigenvectors as <span
+class="math display">\[
+J_{i j}=\sum_\lambda J_\lambda\langle i \mid
+\lambda\rangle\langle\lambda \mid j\rangle .
+\]</span> We define the <span
+class="math inline">\(\lambda\)</span>-magnetization and <span
+class="math inline">\(\lambda\)</span>-field by <span
+class="math display">\[
+m_\lambda=\sum_i\langle\lambda \mid i\rangle m_i, \quad
+h_\lambda=\sum_i\langle\lambda \mid i\rangle h_i
+\]</span> and rewrite (3.96) as <span class="math display">\[
+m_\lambda=\beta m_\lambda J_\lambda+\beta h_\lambda-\beta^2 J^2
+m_\lambda .
+\]</span> Thus the <span
+class="math inline">\(\lambda\)</span>-susceptibility acquires the
+expression <span class="math display">\[
+\chi_\lambda=\frac{\partial m_\lambda}{\partial
+h_\lambda}=\frac{\beta}{1-\beta J_\lambda+(\beta J)^2} .
+\]</span> The eigenvalues of the random matrix <span
+class="math inline">\(\boldsymbol{J}\)</span> are known to be
+distributed between <span class="math inline">\(-2 J\)</span> and <span
+class="math inline">\(2 J\)</span> with the density <span
+class="math display">\[
+\rho\left(J_\lambda\right)=\frac{\sqrt{4 J^2-J_\lambda^2}}{2 \pi J^2} .
+\]</span> It is thus clear from (3.100) that the susceptibility
+corresponding to the largest eigenvalue <span
+class="math inline">\(J_\lambda=2 J\)</span> diverges at <span
+class="math inline">\(T_{\mathrm{f}}=J\)</span>, implying a phase
+transition. This transition point <span
+class="math inline">\(T_{\mathrm{f}}=J\)</span> agrees with the replica
+result.</p>
+<p>In a uniform ferromagnet, the uniform magnetization corresponding to
+the conventional susceptibility (which diverges at the transition point)
+develops below the transition point to form an ordered phase.
+Susceptibilities to all other external fields (such as a field with
+random sign at each site) do not diverge at any temperature. In the SK
+model, by contrast, there is a continuous spectrum of <span
+class="math inline">\(J_\lambda\)</span> and therefore, according to
+(3.100), various modes continue to diverge one after another below the
+transition point <span class="math inline">\(T_{\mathrm{f}}\)</span>
+where the mode with the largest eigenvalue shows a divergent
+susceptibility. In this sense there exist continuous phase transitions
+below <span class="math inline">\(T_{\mathrm{f}}\)</span>. This fact
+corresponds to the marginal stability of the Parisi solution with zero
+eigenvalue of the Hessian and is characteristic of the spin glass phase
+of the SK model.</p>
+<p>The local magnetization <span class="math inline">\(m_i^a\)</span>
+which appeared in the argument of the multivalley structure in the
+previous section is considered to be the solution of the TAP equation
+that minimizes the free energy. Numerical analysis indicates that
+solutions of the TAP equation at low temperatures lie on the border of
+the stability condition, reminiscent of the marginal stability of the
+Parisi solution (Nemoto and Takayama 1985). General solutions of the TAP
+equation may, however, correspond to local minima, not the global minima
+of the free energy (3.73). It is indeed expected that the solutions
+satisfying the minimization condition of the free energy occupy only a
+fraction of the whole set of solutions of the TAP equation that has very
+many solutions of <span
+class="math inline">\(\mathcal{O}\left(\mathrm{e}^{a
+N}\right)(a&gt;0)\)</span>.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Spin-Glass/" rel="tag"># Spin Glass</a>
+              <a href="/tags/S-K-model/" rel="tag"># S-K model</a>
+              <a href="/tags/TAP-equation/" rel="tag"># TAP equation</a>
+              <a href="/tags/cavity-method/" rel="tag"># cavity method</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/07/12/SKmodel-4/" rel="prev" title="SKmodel-4 | 复本对称破缺与Parisi解">
+                  <i class="fa fa-chevron-left"></i> SKmodel-4 | 复本对称破缺与Parisi解
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Li Yuhao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
