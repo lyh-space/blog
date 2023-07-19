@@ -2435,7 +2435,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #944fd1;
+  background: #4bd0ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2496,7 +2496,7 @@ body {
   background: rgba(255,255,255,0.5);
 }
 body {
-  background: url("/images/bg.png");
+  background: url("/blog/images/bg.png");
   background-repeat: repeat;
   background-attachment: local;
   background-position: 50% 50%;
