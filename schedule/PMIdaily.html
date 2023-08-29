@@ -31,7 +31,7 @@
 <meta property="og:description" content="Week 1 arxiv Day 1  用耦合矩阵的频谱和特征向量的简单演化来描述赫布规则下的遗忘（Unlearning ），并设计了新的梦境算法Marc Mèzard新文章Eigenvector Dreaming （DWK） https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2308.13445 为了提高LLM的可靠性，马里兰大学的团队使用增强学习的方法，将ConceptNet等可靠数据集">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-28T09:19:11.000Z">
-<meta property="article:modified_time" content="2023-08-29T06:45:08.510Z">
+<meta property="article:modified_time" content="2023-08-29T15:29:25.429Z">
 <meta property="article:author" content="Li Yuhao">
 <meta name="twitter:card" content="summary">
 
@@ -116,7 +116,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#week-1"><span class="nav-number">1.</span> <span class="nav-text">Week 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#arxiv-day-1"><span class="nav-number">1.0.1.</span> <span class="nav-text">arxiv Day 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#arxiv-day-2"><span class="nav-number">1.0.2.</span> <span class="nav-text">arxiv Day 2</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#week-1"><span class="nav-number">1.</span> <span class="nav-text">Week 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#arxiv-day-1"><span class="nav-number">1.0.1.</span> <span class="nav-text">arxiv Day 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#arxiv-day-2"><span class="nav-number">1.0.2.</span> <span class="nav-text">arxiv Day 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#journal"><span class="nav-number">1.0.3.</span> <span class="nav-text">journal</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -181,51 +181,62 @@ target="_blank" rel="noopener" href="https://arxiv.org/pdf/2308.13234.pdf">https
 <li>EPFL团队首次提出多任务的视觉transformer适配器（multitasking vision
 transformer
 adapters），在新任务无需微调，直接实现zero-shot任务迁移，由于现有基于卷积的网络和基于视觉transformer的方法
-（QJB） <a
+（QJB）<br />
+<a
 target="_blank" rel="noopener" href="https://arxiv.org/abs/2308.12372">https://arxiv.org/abs/2308.12372</a></li>
 <li>Lenka组新文章，Sampling with flows, diffusion and autoregressive
 neural networks: A spin-glass
-perspective，分析了基于流、扩散或自回归网络这些方法在已知概率分布问题类别上的采样效率，发现这些算法的去噪路径上存在一阶相变，并将其与蒙特卡洛马尔科夫链和朗之万动力学等更传统方法的采样性能进行比较。（DWK）
+perspective，分析了基于流、扩散或自回归网络这些方法在已知概率分布问题类别上的采样效率，发现这些算法的去噪路径上存在一阶相变，并将其与蒙特卡洛马尔科夫链和朗之万动力学等更传统方法的采样性能进行比较。（DWK）<br />
 <a
 target="_blank" rel="noopener" href="https://arxiv.org/abs/2308.14085">https://arxiv.org/abs/2308.14085</a><br />
-#### journal</li>
-<li>这篇文章利用hopfield与注意力机制的关系，提出了一种新型的Boltzmann机模型Attentional
+</li>
+<li>作者提出了一个无监督生成框架（PSMT）预测未来的视觉刺激，包括第一层的稀疏编码层编码输入序列，第二层的流形学习层学习一个几何嵌入空间，获得了比静态嵌入空间方法更好的预测性能
+（HWZ）<br />
+<a
+target="_blank" rel="noopener" href="https://arxiv.org/abs/2308.14207">https://arxiv.org/abs/2308.14207</a></li>
+<li>文章提出一种通过突触可塑性和增益调制的互补计算作用来实现自适应白化的多时间尺度机制模型。其将逆白化矩阵分解为基向量和对角矩阵，其中基向量对应于突触权重，对角矩阵对应于神经元增益
+（LZH）<br />
+<a
+target="_blank" rel="noopener" href="https://arxiv.org/abs/2308.13633">https://arxiv.org/abs/2308.13633</a></li>
+</ul>
+<h4 id="journal">journal</h4>
+<ul>
+<li><p>这篇文章利用hopfield与注意力机制的关系，提出了一种新型的Boltzmann机模型Attentional
 BM,它自然地结合了注意力机制,并对某些特殊温度下具有计算可行的似然函数和梯度（YZD）<br />
 <a
 target="_blank" rel="noopener" href="https://doi.org/10.1162/neco_a_01597">https://doi.org/10.1162/neco_a_01597</a><br />
-</li>
-<li>通过多光纤光度记录法，测量了雄性小鼠的13个脑区与社会行为的关系，并使用实验数据训练了通过神经活动预测小鼠行为的分析模型（BRR）<br />
+</p></li>
+<li><p>通过多光纤光度记录法，测量了雄性小鼠的13个脑区与社会行为的关系，并使用实验数据训练了通过神经活动预测小鼠行为的分析模型（BRR）<br />
 <a
 target="_blank" rel="noopener" href="https://doi.org/10.1016/j.neuron.2023.07.011">https://doi.org/10.1016/j.neuron.2023.07.011</a><br />
-</li>
-<li>Hebb规则的时间对称性对网络动力学有重要影响，时间对称的Hebb规则减缓网络的动力学，时间不对称的Hebb规则（如STDP）加速网络的动力学
+</p></li>
+<li><p>Hebb规则的时间对称性对网络动力学有重要影响，时间对称的Hebb规则减缓网络的动力学，时间不对称的Hebb规则（如STDP）加速网络的动力学
 （LYH）<br />
 <a
 target="_blank" rel="noopener" href="https://elifesciences.org/reviewed-preprints/88805">https://elifesciences.org/reviewed-preprints/88805</a><br />
-</li>
-<li>Lenka Zdeborová团队提出了Backtracking Dynamical Cavity
+</p></li>
+<li><p>Lenka Zdeborová团队提出了Backtracking Dynamical Cavity
 Method，通过从吸引子向后追踪轨迹来分析轨迹，应用于复杂系统非平衡态和动力学特性研究（ZLY）<br />
 <a
-target="_blank" rel="noopener" href="https://doi.org/10.1103/PhysRevX.13.031021">https://doi.org/10.1103/PhysRevX.13.031021</a></li>
-<li>作者研究了二元和连续权重的负边缘感知器非凸神经网络，分析了这两个模型解空间的几何特性异同（ZLY）<br />
+target="_blank" rel="noopener" href="https://doi.org/10.1103/PhysRevX.13.031021">https://doi.org/10.1103/PhysRevX.13.031021</a></p></li>
+<li><p>作者研究了二元和连续权重的负边缘感知器非凸神经网络，分析了这两个模型解空间的几何特性异同（ZLY）<br />
 <a
-target="_blank" rel="noopener" href="https://doi.org/10.1103/PhysRevE.108.024310">https://doi.org/10.1103/PhysRevE.108.024310</a></li>
-<li>The relationship between inhibition stabilization and the
+target="_blank" rel="noopener" href="https://doi.org/10.1103/PhysRevE.108.024310">https://doi.org/10.1103/PhysRevE.108.024310</a></p></li>
+<li><p>The relationship between inhibition stabilization and the
 paradoxical effect in the presence of neuronal nonlinearity and
 short-term plasticity. （WSN）<br />
 <a
-target="_blank" rel="noopener" href="https://doi.org/10.1103/PhysRevResearch.5.033023">https://doi.org/10.1103/PhysRevResearch.5.033023</a></li>
-<li>癫痫病的动力学模型（WYC）<br />
-<a
-target="_blank" rel="noopener" href="https://doi.org/10.1016/j.neunet.2023.03.040">https://doi.org/10.1016/j.neunet.2023.03.040</a>
+target="_blank" rel="noopener" href="https://doi.org/10.1103/PhysRevResearch.5.033023">https://doi.org/10.1103/PhysRevResearch.5.033023</a></p></li>
+<li><p>癫痫病的动力学模型（WYC）<br />
 这篇文章吸引我的地方：(1)
 这篇文章使用了贝叶斯推断建模，先验后验那一套；(2)
 给出了癫痫病的相图。这篇文章我的comment：感觉我们也能用理论对其建模<br />
-</li>
-<li>为了了解梯度训练初期阶段中特征学习的涌现，Jimmy Ba
-等人在随机权重上的第一步梯度训练上进行探究，发现首次梯度训练对特征的学习有着很大影响，并且分析了不同学习率所发挥的作用。（XMS）
 <a
-target="_blank" rel="noopener" href="https://neurips.cc/virtual/2022/poster/55422">https://neurips.cc/virtual/2022/poster/55422</a></li>
+target="_blank" rel="noopener" href="https://doi.org/10.1016/j.neunet.2023.03.040">https://doi.org/10.1016/j.neunet.2023.03.040</a></p></li>
+<li><p>为了了解梯度训练初期阶段中特征学习的涌现，Jimmy Ba
+等人在随机权重上的第一步梯度训练上进行探究，发现首次梯度训练对特征的学习有着很大影响，并且分析了不同学习率所发挥的作用（XMS）<br />
+<a
+target="_blank" rel="noopener" href="https://neurips.cc/virtual/2022/poster/55422">https://neurips.cc/virtual/2022/poster/55422</a></p></li>
 </ul>
 
       </div>
