@@ -23,15 +23,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lyhspace.com","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="这是 下载">
+    <meta name="description" content="似乎每个学期刚开始都会写一个新的实验报告模板。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一个近代物理实验报告模板">
 <meta property="og:url" content="http://lyhspace.com/blog/2023/09/06/MPEtemplate/index.html">
 <meta property="og:site_name" content="Li Yuhao&#39;s Blog">
-<meta property="og:description" content="这是 下载">
+<meta property="og:description" content="似乎每个学期刚开始都会写一个新的实验报告模板。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-06T03:21:21.000Z">
-<meta property="article:modified_time" content="2023-09-06T12:48:06.181Z">
+<meta property="article:published_time" content="2023-09-06T14:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-06T13:57:06.376Z">
 <meta property="article:author" content="Li Yuhao">
 <meta name="twitter:card" content="summary">
 
@@ -102,7 +102,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -115,6 +115,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%9D%BF%E7%9A%84%E4%B8%8B%E8%BD%BD%E4%B8%8E%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">模板的下载与使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E9%A2%98%E9%A1%B5"><span class="nav-number">2.</span> <span class="nav-text">标题页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E8%AF%B4%E6%98%8E"><span class="nav-number">3.</span> <span class="nav-text">字体说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">待解决的问题</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -177,7 +178,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-09-06 11:21:21 / 修改时间：20:48:06" itemprop="dateCreated datePublished" datetime="2023-09-06T11:21:21+08:00">2023-09-06</time>
+      <time title="创建时间：2023-09-06 22:00:00 / 修改时间：21:57:06" itemprop="dateCreated datePublished" datetime="2023-09-06T22:00:00+08:00">2023-09-06</time>
     </span>
 
   
@@ -189,9 +190,92 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>这是</p>
-<p><a
-href="http://lyhspace.com/blog/download/MPEtemplate.zip">下载</a></p>
+    <div class="post-body" itemprop="articleBody"><blockquote>
+<p>似乎每个学期刚开始都会写一个新的实验报告模板。</p>
+</blockquote>
+<span id="more"></span>
+<p>这是一个近代物理实验报告的模板，基于 <code>article</code>
+文档类重新制作了一个 <code>MPEtemplate.cls</code>
+文件。写这个模板的初衷是为了给论文制作一个单独的标题页，但是在导言区使用了大量的命令来修改样式，<code>tex</code>
+文件过于繁琐，眼花缭乱。于是干脆直接重写一个 <code>cls</code>
+类文件集成所有的设置，使 <code>tex</code> 文件可以专注于写作。</p>
+<figure>
+<img
+src="https://foruda.gitee.com/images/1694004842676583825/86e72ec1_10250294.png"
+alt="论文标题页预览图" />
+<figcaption aria-hidden="true">论文标题页预览图</figcaption>
+</figure>
+<h2 id="模板的下载与使用">模板的下载与使用</h2>
+<p>点 <a
+href="http://lyhspace.com/blog/download/MPEtemplate.zip">这里</a>
+下载就好了。</p>
+<p>解压后会得到如下一个文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MPEtemplate</span><br><span class="line"> ├─ MPEtemplate.cls    # 类文件</span><br><span class="line"> ├─ temp.tex           # 内容文件</span><br><span class="line"> ├─ reference.bib      # 示例参考文献信息</span><br><span class="line"> ├─ matlabCode.m       # 示例matlab代码</span><br><span class="line"> ├─ pythonCode.py      # 示例python代码</span><br><span class="line"> └─ img                # 图片文件夹</span><br><span class="line">     └─ simp_ref.png   # 示例图片</span><br></pre></td></tr></table></figure>
+<p>由于在 <code>MPEtemplate.cls</code>
+文件中使用了大量的方正系列和思源系列字体，非常<strong>不建议</strong>在本地
+LaTeX
+编译器中使用该模板。除非你对LaTeX和你的编译器足够熟悉，否则大概率会遇到找不到字体的报错。</p>
+<p><strong>建议使用 <a target="_blank" rel="noopener" href="https://texpage.com/">TexPage</a> 或 <a
+target="_blank" rel="noopener" href="https://www.overleaf.com">Overleaf</a>
+等在线编译网站。</strong></p>
+<p><img
+src="https://foruda.gitee.com/images/1694006453069974448/98a788f5_10250294.png" /></p>
+<p>以 TexPage 为例，点击 <code>新建</code>
+后即可将整个压缩文件上传，然后在线打开。</p>
+<p><img
+src="https://foruda.gitee.com/images/1694006566877385901/89fa7009_10250294.png" /></p>
+<h2 id="标题页">标题页</h2>
+<p>导言区中只存在如下命令，用于填写标题页相关内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">\CNtitle&#123;&#125;    % 中文标题</span><br><span class="line">\CNauthor&#123;&#125;   % 中文作者</span><br><span class="line">\CNaddress&#123;&#125;  % 中文通讯地址</span><br><span class="line">\CNdate&#123;&#125;     % 中文日期</span><br><span class="line"></span><br><span class="line">\ENtitle&#123;&#125;    % 英文标题</span><br><span class="line">\ENauthor&#123;&#125;   % 英文作者</span><br><span class="line">\ENaddress&#123;&#125;  % 英文通讯地址</span><br><span class="line">\ENdate&#123;&#125;     % 英文日期</span><br><span class="line"></span><br><span class="line">\CNabstract&#123;&#125; % 中文摘要</span><br><span class="line">\CNkeyword&#123;&#125;  % 中文关键词</span><br><span class="line">\ENabstract&#123;&#125; % 英文摘要</span><br><span class="line">\ENkeyword&#123;&#125;  % 英文关键词</span><br></pre></td></tr></table></figure>
+<h2 id="字体说明">字体说明</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">类型</th>
+<th style="text-align: center;">字体</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">英文默认字体</td>
+<td style="text-align: center;"><code>TeX Gyre Termes</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">英文无衬线字体</td>
+<td style="text-align: center;"><code>Arial</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">英文打字机字体</td>
+<td style="text-align: center;"><code>Consolas</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">中文默认字体</td>
+<td style="text-align: center;"><code>方正书宋_GBK</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">中文无衬线字体</td>
+<td style="text-align: center;"><code>方正黑体_GBK</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">中文等宽字体</td>
+<td style="text-align: center;"><code>方正仿宋_GBK</code></td>
+</tr>
+</tbody>
+</table>
+<p>其中，中文默认字体的粗体（即你在正文使用<code>\textbf&#123;&#125;</code>加粗时）为<code>思源宋体 CN SemiBold</code>，斜体（即你在正文使用<code>\textit&#123;&#125;</code>倾斜时）为
+LaTeX 使用算法渲染的伪斜体。中文无衬线字体的粗体为
+<code>思源黑体 CN Medium</code>。</p>
+<p>请注意，不建议在中文正文中使用斜体，因为中文字族实际上并没有斜体，本模板中及Microsoft
+Word中的斜体都是使用算法渲染的伪斜体。如需着重强调文本，请使用楷体，即
+<code>&#123;\kaiti 需要强调的文本&#125;</code>。</p>
+<p>此外，你可以使用以下命令临时调用字体</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\songti      % 方正书宋_GBK</span><br><span class="line">\BoldSong    % 思源宋体 CN Bold</span><br><span class="line">\HeavySong   % 思源宋体 CN Heavy</span><br><span class="line">\heiti       % 方正黑体_GBK</span><br><span class="line">\MediumHei   % 思源黑体 CN Medium</span><br><span class="line">\BoldHei     % 思源黑体 CN Bold</span><br><span class="line">\fangsong    % 方正仿宋_GBK</span><br><span class="line">\kaiti       % 方正楷体_GBK</span><br></pre></td></tr></table></figure>
+<p>其中，<code>方正楷体_GBK</code> 没有粗体字体，在本模板中可以使用
+<code>\textbf&#123;&#125;</code> 得到 LaTeX 使用算法渲染的伪粗体。</p>
+<h2 id="待解决的问题">待解决的问题</h2>
+<p>在附录的样式中，由于 <code>appendix</code> 宏包与 <code>ctex</code>
+宏包冲突，无法重新设置附录中标题的编号样式，目前只能通过手动编号的方式实现较为美观的方案，具体情况已在
+<code>temp.tex</code> 中说明。如果你有较好的解决方案，欢迎与我联系。</p>
 
     </div>
 
