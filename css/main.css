@@ -2,22 +2,22 @@
   --body-bg-color: #fff;
   --content-bg-color: #c61b1b;
   --card-bg-color: #f5f5f5;
-  --text-color: #2f3663;
-  --blockquote-color: #2f3663;
-  --link-color: #7c272c;
+  --text-color: #411e1a;
+  --blockquote-color: #411e1a;
+  --link-color: #c1351a;
   --link-hover-color: #222;
-  --brand-color: #7c272c;
-  --brand-hover-color: #2f3663;
+  --brand-color: #c1351a;
+  --brand-hover-color: #411e1a;
   --table-row-odd-bg-color: #f9f9f9;
   --table-row-hover-bg-color: #f5f5f5;
   --menu-item-bg-color: #287146;
   --theme-color: #222;
   --btn-default-bg: transparent;
-  --btn-default-color: #5d73a4;
-  --btn-default-border-color: #5d73a4;
+  --btn-default-color: #c08370;
+  --btn-default-border-color: #c08370;
   --btn-default-hover-bg: transparent;
-  --btn-default-hover-color: #33395c;
-  --btn-default-hover-border-color: #33395c;
+  --btn-default-hover-color: #865648;
+  --btn-default-hover-border-color: #865648;
   --highlight-background: #0d1117;
   --highlight-foreground: #c9d1d9;
   --highlight-gutter-background: #1f242a;
@@ -224,7 +224,7 @@ p {
   margin: 0 0 20px;
 }
 a {
-  border-bottom: 1px solid #7c272c;
+  border-bottom: 1px solid #c08370;
   color: var(--link-color);
   cursor: pointer;
   outline: 0;
@@ -252,8 +252,8 @@ hr {
 }
 blockquote {
   font-family: STKaiTi;
-  background: rgba(240,232,229,0.671);
-  border-left: 6px solid rgba(69,77,127,0.91);
+  background: rgba(248,243,239,0.671);
+  border-left: 6px solid #865648;
   color: var(--blockquote-color);
   margin: 0.25em 0;
   padding: 0 15px;
@@ -387,7 +387,7 @@ figure.highlight .table-container {
   padding: 2px 6px;
   position: absolute;
   transition: opacity 0.2s ease-in-out;
-  color: #2f3663;
+  color: #411e1a;
   font-size: 14px;
   right: 0;
   top: 2px;
@@ -422,7 +422,7 @@ figure.highlight,
 pre {
   color: #f8f3ef;
   line-height: 1.6;
-  background: #5d73a4;
+  background: rgba(247,229,206,0.702);
   margin: 0 auto 20px;
 }
 figure.highlight figcaption,
@@ -465,7 +465,7 @@ figure.highlight {
   position: relative;
 }
 figure.highlight pre {
-  background: #2f3663;
+  background: #411e1a;
   border: 0;
   margin: 0;
   padding: 10px 0;
@@ -489,7 +489,7 @@ figure.highlight .gutter {
   user-select: none;
 }
 figure.highlight .gutter pre {
-  background: rgba(61,69,115,0.871);
+  background: #763d36;
   color: #f8f3ef;
   padding-left: 10px;
   padding-right: 5px;
@@ -576,7 +576,7 @@ pre code {
   width: 100%;
 }
 .post-body .label {
-  color: #2f3663;
+  color: #411e1a;
   padding: 0 2px;
 }
 .post-body .label.default {
@@ -1561,14 +1561,14 @@ pre code {
   text-align: left;
 }
 .post-content {
-  background: rgba(196,216,241,0.871);
+  background: rgba(246,225,198,0.933);
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 25px;
   border-radius-inner: 20px 20px 20px 20px;
   border-radius: 10px;
-  -webkit-box-shadow: 0 0 5px #5d73a4;
-  -moz-box-shadow: 0 0 5px #5d73a4;
+  -webkit-box-shadow: 0 0 5px rgba(192,131,112,0.58);
+  -moz-box-shadow: 0 0 5px rgba(192,131,112,0.58);
 }
 .use-motion .post-block,
 .use-motion .pagination,
@@ -1842,7 +1842,7 @@ pre code {
 .posts-expand .post-title {
   font-size: 20pt;
   font-weight: bold;
-  color: #2f3663;
+  color: #b93319;
   margin: initial;
   overflow-wrap: break-word;
 }
@@ -1876,7 +1876,7 @@ pre code {
   transform: rotate(30deg);
 }
 .posts-expand .post-meta-container {
-  color: #33395d;
+  color: #865648;
   font-family: Noto Serif SC, "Noto Serif SC", 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 0.85em;
   margin-top: 3px;
@@ -1886,7 +1886,7 @@ pre code {
   margin-top: 2px;
 }
 .posts-expand .post-meta-container time {
-  border-bottom: 1px dashed #33395d;
+  border-bottom: 1px dashed #999;
 }
 .post-meta {
   display: flex;
@@ -2027,12 +2027,12 @@ pre code {
   }
 }
 .category-all-page {
-  background: rgba(196,216,241,0.871);
+  background: rgba(246,225,198,0.816);
   border-radius-inner: 20px 20px 20px 20px;
   border-radius: 10px;
   padding-bottom: 10px;
-  -webkit-box-shadow: 0 0 5px #5d73a4;
-  -moz-box-shadow: 0 0 5px #5d73a4;
+  -webkit-box-shadow: 0 0 5px rgba(192,131,112,0.58);
+  -moz-box-shadow: 0 0 5px rgba(192,131,112,0.58);
 }
 .category-all-page .category-all-title {
   text-align: center;
@@ -2169,12 +2169,12 @@ ul.breadcrumb li:last-child {
 }
 .tag-cloud {
   text-align: center;
-  background: rgba(196,216,241,0.871);
+  background: rgba(246,225,198,0.816);
   border-radius-inner: 20px 20px 20px 20px;
   border-radius: 10px;
   padding-bottom: 10px;
-  -webkit-box-shadow: 0 0 5px #5d73a4;
-  -moz-box-shadow: 0 0 5px #5d73a4;
+  -webkit-box-shadow: 0 0 5px rgba(192,131,112,0.58);
+  -moz-box-shadow: 0 0 5px rgba(192,131,112,0.58);
 }
 .tag-cloud a {
   display: inline-block;
@@ -2255,8 +2255,8 @@ hr {
   }
 }
 .footer {
-  background: rgba(173,203,239,0.91);
-  color: #2f3663;
+  background: #f6e1c6;
+  color: #865648;
   padding: 10px 0;
 }
 @media (max-width: 767px) {
@@ -2265,7 +2265,7 @@ hr {
   }
 }
 .column {
-  background: rgba(173,203,239,0.91);
+  background: rgba(246,225,198,0.741);
 }
 header.header {
   align-items: center;
@@ -2290,7 +2290,7 @@ header.header {
   font-weight: bolder;
 }
 .logo-line {
-  background: #2f3663;
+  background: #c1351a;
   display: block;
   height: 2px;
   margin: 0 auto;
@@ -2340,7 +2340,6 @@ header.header {
   border-radius: 2px;
   padding: 0 10px;
   transition-property: background;
-  color: #2f3663;
 }
 @media (max-width: 767px) {
   .menu .menu-item a {
@@ -2504,7 +2503,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #6fff30;
+  background: #2b9e5b;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2562,7 +2561,7 @@ body {
   background-size: contain;
 }
 body {
-  background: #dff0fb url("https://webstatic.mihoyo.com/upload/contentweb/2022/07/04/1ae0d0aaad9ee9b55652ea7ec67f0465_624394286022075834.png");
+  background: #f8f3ef url("https://webstatic.mihoyo.com/upload/contentweb/2022/06/30/16cff1c00f651f98427fc3fbab7fc855_1013342926215826750.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: bottom;
