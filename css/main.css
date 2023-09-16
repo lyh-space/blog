@@ -1560,16 +1560,6 @@ pre code {
   margin-top: 40px;
   text-align: left;
 }
-.post-content {
-  background: rgba(246,225,198,0.933);
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 25px;
-  border-radius-inner: 20px 20px 20px 20px;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 5px rgba(192,131,112,0.58);
-  -moz-box-shadow: 0 0 5px rgba(192,131,112,0.58);
-}
 .use-motion .post-block,
 .use-motion .pagination,
 .use-motion .comments {
@@ -1580,11 +1570,6 @@ pre code {
 }
 .use-motion .post-body {
   visibility: hidden;
-  background: rgba(246,225,198,0.816);
-  border-radius: 10px;
-  padding: 30px;
-  -webkit-box-shadow: 0 0 5px rgba(192,131,112,0.58);
-  -moz-box-shadow: 0 0 5px rgba(192,131,112,0.58);
 }
 .use-motion .collection-header {
   visibility: hidden;
@@ -2368,6 +2353,19 @@ header.header {
 }
 .posts-expand .post-block:not(:first-of-type) {
   margin-top: 40px;
+  background: rgba(246,225,198,0.816);
+  border-radius: 10px;
+  padding: 30px;
+  -webkit-box-shadow: 0 0 5px rgba(192,131,112,0.58);
+  -moz-box-shadow: 0 0 5px rgba(192,131,112,0.58);
+}
+.posts-expand .post-block:first-of-type {
+  margin-top: 80px;
+  background: rgba(246,225,198,0.816);
+  border-radius: 10px;
+  padding: 30px;
+  -webkit-box-shadow: 0 0 5px rgba(192,131,112,0.58);
+  -moz-box-shadow: 0 0 5px rgba(192,131,112,0.58);
 }
 .posts-expand .post-header {
   margin-bottom: 20px;
@@ -2494,7 +2492,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #2d04e9;
+  background: #8337ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
