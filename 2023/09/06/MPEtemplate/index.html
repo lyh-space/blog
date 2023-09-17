@@ -30,10 +30,14 @@
 <meta property="og:site_name" content="Li Yuhao&#39;s Blog">
 <meta property="og:description" content="似乎每个学期刚开始都会写一个新的实验报告模板。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://lyhspace.com/blog/img/MPEtemplate/%E6%A8%A1%E6%9D%BF%E9%A2%84%E8%A7%88%E5%9B%BE.png">
+<meta property="og:image" content="http://lyhspace.com/blog/img/MPEtemplate/%E4%B8%8A%E4%BC%A0%E9%A1%B9%E7%9B%AE.png">
+<meta property="og:image" content="http://lyhspace.com/blog/img/MPEtemplate/%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E5%90%8E%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
 <meta property="article:published_time" content="2023-09-06T14:00:00.000Z">
-<meta property="article:modified_time" content="2023-09-13T05:10:34.389Z">
+<meta property="article:modified_time" content="2023-09-17T14:05:30.259Z">
 <meta property="article:author" content="Li Yuhao">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://lyhspace.com/blog/img/MPEtemplate/%E6%A8%A1%E6%9D%BF%E9%A2%84%E8%A7%88%E5%9B%BE.png">
 
 
 <link rel="canonical" href="http://lyhspace.com/blog/2023/09/06/MPEtemplate/">
@@ -147,7 +151,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-13 13:10:34" itemprop="dateModified" datetime="2023-09-13T13:10:34+08:00">2023-09-13</time>
+      <time title="修改时间：2023-09-17 22:05:30" itemprop="dateModified" datetime="2023-09-17T22:05:30+08:00">2023-09-17</time>
     </span>
 
   
@@ -169,8 +173,7 @@
 文件过于繁琐，眼花缭乱。于是干脆直接重写一个 <code>cls</code>
 类文件集成所有的设置，使 <code>tex</code> 文件可以专注于写作。</p>
 <figure>
-<img
-src="https://foruda.gitee.com/images/1694004842676583825/86e72ec1_10250294.png"
+<img src="\blog\img\MPEtemplate\模板预览图.png"
 alt="论文标题页预览图" />
 <figcaption aria-hidden="true">论文标题页预览图</figcaption>
 </figure>
@@ -187,12 +190,10 @@ LaTeX
 <p><strong>建议使用 <a target="_blank" rel="noopener" href="https://texpage.com/">TexPage</a> 或 <a
 target="_blank" rel="noopener" href="https://www.overleaf.com">Overleaf</a>
 等在线编译网站。</strong></p>
-<p><img
-src="https://foruda.gitee.com/images/1694006453069974448/98a788f5_10250294.png" /></p>
+<p><img src="\blog\img\MPEtemplate\上传项目.png" /></p>
 <p>以 TexPage 为例，点击 <code>新建</code>
 后即可将整个压缩文件上传，然后在线打开。</p>
-<p><img
-src="https://foruda.gitee.com/images/1694006566877385901/89fa7009_10250294.png" /></p>
+<p><img src="\blog\img\MPEtemplate\打开文件后示意图.png" /></p>
 <h2 id="标题页">标题页</h2>
 <p>导言区中只存在如下命令，用于填写标题页相关内容</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">\CNtitle&#123;&#125;    % 中文标题</span><br><span class="line">\CNauthor&#123;&#125;   % 中文作者</span><br><span class="line">\CNaddress&#123;&#125;  % 中文通讯地址</span><br><span class="line">\CNdate&#123;&#125;     % 中文日期</span><br><span class="line"></span><br><span class="line">\ENtitle&#123;&#125;    % 英文标题</span><br><span class="line">\ENauthor&#123;&#125;   % 英文作者</span><br><span class="line">\ENaddress&#123;&#125;  % 英文通讯地址</span><br><span class="line">\ENdate&#123;&#125;     % 英文日期</span><br><span class="line"></span><br><span class="line">\CNabstract&#123;&#125; % 中文摘要</span><br><span class="line">\CNkeyword&#123;&#125;  % 中文关键词</span><br><span class="line">\ENabstract&#123;&#125; % 英文摘要</span><br><span class="line">\ENkeyword&#123;&#125;  % 英文关键词</span><br></pre></td></tr></table></figure>
