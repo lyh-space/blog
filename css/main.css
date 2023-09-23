@@ -2353,7 +2353,7 @@ header.header {
 }
 .posts-expand .post-block:not(:first-of-type) {
   margin-top: 40px;
-  background: rgba(246,225,198,0.816);
+  background: rgba(246,225,198,0.902);
   border-radius: 10px;
   padding: 30px;
   -webkit-box-shadow: 0 0 5px rgba(192,131,112,0.58);
@@ -2361,7 +2361,7 @@ header.header {
 }
 .posts-expand .post-block:first-of-type {
   margin-top: 80px;
-  background: rgba(246,225,198,0.816);
+  background: rgba(246,225,198,0.902);
   border-radius: 10px;
   padding: 30px;
   -webkit-box-shadow: 0 0 5px rgba(192,131,112,0.58);
@@ -2492,7 +2492,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #fffff7;
+  background: #ff8ecb;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
