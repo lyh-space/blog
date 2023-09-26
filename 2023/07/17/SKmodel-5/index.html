@@ -171,51 +171,40 @@
     
     
     <div class="post-body" itemprop="articleBody"><blockquote>
-<p><strong>Abstract</strong><br />
-主要参考了 Nishimori 的 <a
-target="_blank" rel="noopener" href="https://searchworks.stanford.edu/view/4790812"><em>Statistical
+<p><strong>Abstract</strong><br>
+主要参考了 Nishimori 的 <a target="_blank" rel="noopener" href="https://searchworks.stanford.edu/view/4790812"><em>Statistical
 Physics of Spin Glasses and Information Processing An
-Introduction</em></a> 第二章以及 Haozhe Shan 的笔记 <a
-target="_blank" rel="noopener" href="https://hzshan.github.io/replica_method_in_SK_model.pdf"><em>Replica
+Introduction</em></a> 第二章以及 Haozhe Shan 的笔记 <a target="_blank" rel="noopener" href="https://hzshan.github.io/replica_method_in_SK_model.pdf"><em>Replica
 calculations for the SK model</em></a>.</p>
 </blockquote>
 <span id="more"></span>
-<h1 id="tap-equation">3.5.1 TAP equation</h1>
+<h1><span id="351-tap-equation">3.5.1 TAP equation</span></h1>
 <p>The local magnetization of the SK model satisfies the following TAP
-equation, given the random interactions <span
-class="math inline">\(\boldsymbol{J}=\left\{J_{i j}\right\}\)</span> :
+equation, given the random interactions <span class="math inline">\(\boldsymbol{J}=\left\{J_{i j}\right\}\)</span> :
 <span class="math display">\[
 m_i=\tanh \beta\left\{\sum_j J_{i j} m_j+h_i-\beta \sum_j J_{i
 j}^2\left(1-m_j^2\right) m_i\right\} .
 \]</span> The first term on the right hand side represents the usual
 internal field, a generalization of (1.19). The third term is called the
 reaction field of Onsager and is added to remove the effects of
-self-response in the following sense. The magnetization <span
-class="math inline">\(m_i\)</span> affects site <span
-class="math inline">\(j\)</span> through the internal field <span
-class="math inline">\(J_{i j} m_i\)</span> that changes the
+self-response in the following sense. The magnetization <span class="math inline">\(m_i\)</span> affects site <span class="math inline">\(j\)</span> through the internal field <span class="math inline">\(J_{i j} m_i\)</span> that changes the
 magnetization of site <span class="math inline">\(j\)</span> by the
 amount <span class="math inline">\(\chi_{j j} J_{i j} m_i\)</span>. Here
 <span class="math display">\[
 \chi_{j j}=\left.\frac{\partial m_j}{\partial h_j}\right|_{h_j
 \rightarrow 0}=\beta\left(1-m_j^2\right) .
-\]</span> Then the internal field at site <span
-class="math inline">\(i\)</span> would increase by <span
-class="math display">\[
+\]</span> Then the internal field at site <span class="math inline">\(i\)</span> would increase by <span class="math display">\[
 J_{i j} \chi_{j j} J_{i j} m_i=\beta J_{i j}^2\left(1-m_j^2\right) m_i .
-\]</span> The internal field at site <span
-class="math inline">\(i\)</span> should not include such a rebound of
+\]</span> The internal field at site <span class="math inline">\(i\)</span> should not include such a rebound of
 itself. The third term on the right hand side of (3.70) removes this
 effect. In a usual ferromagnet with infinite-range interactions, the
 interaction scales as <span class="math inline">\(J_{i j}=J / N\)</span>
-and the third term is negligible since it is of <span
-class="math inline">\(\mathcal{O}(1 / N)\)</span>. In the SK model,
+and the third term is negligible since it is of <span class="math inline">\(\mathcal{O}(1 / N)\)</span>. In the SK model,
 however, we have <span class="math inline">\(J_{i j}^2=\mathcal{O}(1 /
 N)\)</span> and the third term is of the same order as the first and
 second terms and cannot be neglected. The TAP equation gives a basis to
 treat the spin glass problem without taking the configurational average
-over the distribution of <span
-class="math inline">\(\boldsymbol{J}\)</span>.</p>
+over the distribution of <span class="math inline">\(\boldsymbol{J}\)</span>.</p>
 <p>The TAP equation (3.70) corresponds to the extremization condition of
 the following free energy: <span class="math display">\[
 \begin{aligned}
@@ -233,22 +222,16 @@ with magnetization specified <span class="math display">\[
 -\beta \tilde{f}(\alpha, \beta, \boldsymbol{m})=\log \operatorname{Tr}
 \mathrm{e}^{-\beta H(\alpha)}-\beta \sum_i h_i m_i,
 \]</span> where <span class="math inline">\(H(\alpha)=\alpha H_0-\sum_i
-h_i S_i\)</span> and <span
-class="math inline">\(\boldsymbol{m}=\left\{m_i\right\}\)</span>. The
+h_i S_i\)</span> and <span class="math inline">\(\boldsymbol{m}=\left\{m_i\right\}\)</span>. The
 Hamiltonian <span class="math inline">\(H_0\)</span> denotes the usual
 SK model, and <span class="math inline">\(h_i(\alpha, \beta,
 \boldsymbol{m})\)</span> is the Lagrange multiplier to enforce the
 constraint <span class="math inline">\(m_i=\left\langle
-S_i\right\rangle_\alpha\)</span>, where <span
-class="math inline">\(\langle\cdot\rangle_\alpha\)</span> is the thermal
+S_i\right\rangle_\alpha\)</span>, where <span class="math inline">\(\langle\cdot\rangle_\alpha\)</span> is the thermal
 average with <span class="math inline">\(H(\alpha)\)</span>. Expanding
-<span class="math inline">\(\tilde{f}\)</span> to second order in <span
-class="math inline">\(\alpha\)</span> around <span
-class="math inline">\(\alpha=0\)</span> and setting <span
-class="math inline">\(\alpha\)</span> equal to one, we can derive
+<span class="math inline">\(\tilde{f}\)</span> to second order in <span class="math inline">\(\alpha\)</span> around <span class="math inline">\(\alpha=0\)</span> and setting <span class="math inline">\(\alpha\)</span> equal to one, we can derive
 (3.73). This is called the Plefka expansion (Plefka 1982). To see it,
-let us first carry out the differentiations <span
-class="math display">\[
+let us first carry out the differentiations <span class="math display">\[
 \begin{aligned}
 &amp; \frac{\partial \tilde{f}}{\partial \alpha}=\left\langle
 H_0\right\rangle_\alpha \\
@@ -256,60 +239,47 @@ H_0\right\rangle_\alpha \\
 H_0\left(H_0-\left\langle H_0\right\rangle_\alpha-\sum_i \frac{\partial
 h_i}{\partial \alpha}\left(S_i-m_i\right)\right)\right\rangle_\alpha .
 \end{aligned}
-\]</span> The first two terms of the expansion <span
-class="math inline">\(\tilde{f}(1) \approx
-\tilde{f}(0)+\tilde{f}^{\prime}(0)\)</span> give <span
-class="math inline">\((3.73)\)</span> except the Onsager term with <span
-class="math inline">\(J_{i j}^2\)</span> since <span
-class="math display">\[
+\]</span> The first two terms of the expansion <span class="math inline">\(\tilde{f}(1) \approx
+\tilde{f}(0)+\tilde{f}^{\prime}(0)\)</span> give <span class="math inline">\((3.73)\)</span> except the Onsager term with <span class="math inline">\(J_{i j}^2\)</span> since <span class="math display">\[
 \begin{aligned}
 \tilde{f}(0) &amp; =T \sum_i\left(\frac{1+m_i}{2} \log
 \frac{1+m_i}{2}+\frac{1-m_i}{2} \log \frac{1-m_i}{2}\right) \\
 \tilde{f}^{\prime}(0) &amp; =-\frac{1}{2} \sum_{i \neq j} J_{i j} m_i
 m_j .
 \end{aligned}
-\]</span> The second derivative (3.76) can be evaluated at <span
-class="math inline">\(\alpha=0\)</span> from the relation <span
-class="math display">\[
+\]</span> The second derivative (3.76) can be evaluated at <span class="math inline">\(\alpha=0\)</span> from the relation <span class="math display">\[
 \left.\left.\frac{\partial h_i}{\partial
 \alpha}\right]_{\alpha=0}=\frac{\partial}{\partial \alpha}
 \frac{\partial \tilde{f}}{\partial m_i}\right]_{\alpha=0}=-\sum_{j(\neq
 i)} J_{i j} m_j .
-\]</span> Inserting this relation into (3.76) we find <span
-class="math display">\[
+\]</span> Inserting this relation into (3.76) we find <span class="math display">\[
 \tilde{f}^{\prime \prime}(0)=-\frac{1}{2} \beta \sum_{i \neq j} J_{i
 j}^2\left(1-m_i^2\right)\left(1-m_j^2\right)
 \]</span> which gives the Onsager term in (3.73). It has hence been
-shown that <span class="math inline">\(f_{\mathrm{TAP}}=\)</span> <span
-class="math inline">\(\tilde{f}(0)+\tilde{f}^{\prime}(0)+\tilde{f}^{\prime
+shown that <span class="math inline">\(f_{\mathrm{TAP}}=\)</span> <span class="math inline">\(\tilde{f}(0)+\tilde{f}^{\prime}(0)+\tilde{f}^{\prime
 \prime}(0) / 2\)</span>. It can also be shown that the convergence
 condition of the above expansion for <span class="math inline">\(\alpha
 \geq 1\)</span> is equivalent to the stability condition of the free
-energy that the eigenvalues of the Hessian <span
-class="math inline">\(\left\{\partial^2 f_{\mathrm{TAP}} / \partial m_i
+energy that the eigenvalues of the Hessian <span class="math inline">\(\left\{\partial^2 f_{\mathrm{TAP}} / \partial m_i
 \partial m_j\right\}\)</span> be non-negative. All higher order terms in
 the expansion vanish in the thermodynamic limit as long as the stability
 condition is satisfied.</p>
-<h1 id="cavity-method">3.5.2 Cavity method</h1>
+<h1><span id="352-cavity-method">3.5.2 Cavity method</span></h1>
 <p>The cavity method is useful to derive the TAP equation from a
 different perspective (Mézard et al. 1986, 1987). It also attracts
 attention in relation to practical algorithms to solve information
 processing problems (Opper and Saad 2001). The argument in the present
 section is restricted to the case of the SK model for simplicity (Opper
 and Winther 2001).</p>
-<p>Let us consider the local magnetization <span
-class="math inline">\(m_i=\left\langle S_i\right\rangle\)</span>, where
+<p>Let us consider the local magnetization <span class="math inline">\(m_i=\left\langle S_i\right\rangle\)</span>, where
 the thermal average is taken within a single valley. The goal is to show
 that this local magnetization satisfies the TAP equation. For this
 purpose it suffices to derive the distribution function of local spin
 <span class="math inline">\(P_i\left(S_i\right)\)</span>, with which the
 above thermal average is carried out. It is assumed for simplicity that
 there is no external field <span class="math inline">\(h_i=0\)</span>.
-The local magnetization is determined by the local field <span
-class="math inline">\(\tilde{h}_i=\sum_j J_{i j} S_j\)</span>. Hence the
-joint distribution of <span class="math inline">\(S_i\)</span> and <span
-class="math inline">\(\tilde{h}_i\)</span> can be written as <span
-class="math display">\[
+The local magnetization is determined by the local field <span class="math inline">\(\tilde{h}_i=\sum_j J_{i j} S_j\)</span>. Hence the
+joint distribution of <span class="math inline">\(S_i\)</span> and <span class="math inline">\(\tilde{h}_i\)</span> can be written as <span class="math display">\[
 P\left(S_i, \tilde{h}_i\right) \propto \mathrm{e}^{\beta \bar{h}_i S_i}
 P\left(\tilde{h}_i \backslash S_i\right),
 \]</span> where <span class="math inline">\(P\left(\tilde{h}_i
@@ -324,21 +294,16 @@ P\left(\tilde{h}_i \backslash S_i\right) \equiv
 \backslash S_i\right),
 \]</span> where <span class="math inline">\(P\left(S \backslash
 S_i\right)\)</span> is the probability distribution of the whole system
-without <span class="math inline">\(S_i\)</span> <span
-class="math inline">\(\left(J_{i j}=0\right.\)</span> for all <span
-class="math inline">\(\left.j\right)\)</span>. The distribution <span
-class="math display">\[
+without <span class="math inline">\(S_i\)</span> <span class="math inline">\(\left(J_{i j}=0\right.\)</span> for all <span class="math inline">\(\left.j\right)\)</span>. The distribution <span class="math display">\[
 P_i\left(S_i\right) \propto \int \mathrm{d} \tilde{h}_i
 \mathrm{e}^{\beta \bar{h}_i S_i} P\left(\tilde{h}_i \backslash
 S_i\right)
-\]</span> is thus determined once <span
-class="math inline">\(P\left(\tilde{h}_i \backslash S_i\right)\)</span>
+\]</span> is thus determined once <span class="math inline">\(P\left(\tilde{h}_i \backslash S_i\right)\)</span>
 is known. In the SK model the range of interaction is unlimited and the
 number of terms appearing in the sum <span class="math inline">\(\sum_j
 J_{i j} S_j\)</span> is <span class="math inline">\(N-1\)</span>. If all
 these terms are independent and identically distributed, then the
-central limit theorem assures that the cavity field <span
-class="math inline">\(\tilde{h}_i\)</span> is Gaussian distributed. This
+central limit theorem assures that the cavity field <span class="math inline">\(\tilde{h}_i\)</span> is Gaussian distributed. This
 is certainly the case on the Bethe lattice (Fig. 3.6) that breaks up
 into independent trees as soon as a site is removed. Let us assume that
 this is also true for the SK model in which the correlations of
@@ -347,11 +312,9 @@ P\left(\tilde{h}_i \backslash S_i\right)=\frac{1}{\sqrt{2 \pi V_i^2}}
 \exp
 \left\{-\frac{\left(\tilde{h}_i-\left\langle\tilde{h}_i\right\rangle_{\backslash
 i}\right)^2}{2 V_i}\right\} .
-\]</span> Combination of this Gaussian form and (3.83) yields <span
-class="math display">\[
+\]</span> Combination of this Gaussian form and (3.83) yields <span class="math display">\[
 m_i=\tanh \beta\left\langle\tilde{h}_i\right\rangle_{\backslash i}
-\]</span> It is therefore necessary to evaluate the average <span
-class="math inline">\(\left\langle\tilde{h}_i\right\rangle_{\backslash
+\]</span> It is therefore necessary to evaluate the average <span class="math inline">\(\left\langle\tilde{h}_i\right\rangle_{\backslash
 i}\)</span>. The standard average of the local field (without the
 cavity), <span class="math display">\[
 \left\langle\tilde{h}_i\right\rangle=\operatorname{Tr}_{S_i} \int
@@ -364,14 +327,12 @@ i}+V_i\left\langle S_i\right\rangle
 <span class="math display">\[
 \left\langle\tilde{h}_i\right\rangle_{\backslash i}=\sum_j J_{i j}
 m_j-V_i m_i
-\]</span> We then have to evaluate the variance of the local field <span
-class="math display">\[
+\]</span> We then have to evaluate the variance of the local field <span class="math display">\[
 V_i=\sum_{j, k} J_{i j} J_{i k}\left(\left\langle S_j
 S_k\right\rangle_{\backslash i}-\left\langle
 S_j\right\rangle_{\backslash i}\left\langle S_k\right\rangle_{\backslash
 i}\right)
-\]</span> Only the diagonal terms <span
-class="math inline">\((j=k)\)</span> survive in the above sum because of
+\]</span> Only the diagonal terms <span class="math inline">\((j=k)\)</span> survive in the above sum because of
 the clustering property in a single valley <span class="math display">\[
 \frac{1}{N^2} \sum_{j, k}\left(\left\langle S_k
 S_j\right\rangle-\left\langle S_k\right\rangle\left\langle
@@ -389,17 +350,14 @@ j}^2\left(1-m_j^2\right) .
 <p>The equations of state within the RS ansatz (2.28) and (2.30) can be
 derived from the TAP equation with the cavity method taken into account.
 We first separate the interaction <span class="math inline">\(J_{i
-j}\)</span> into the ferromagnetic and random terms, <span
-class="math display">\[
+j}\)</span> into the ferromagnetic and random terms, <span class="math display">\[
 J_{i j}=\frac{J_0}{N}+\frac{J}{\sqrt{N}} z_{i j}
 \]</span> where <span class="math inline">\(z_{i j}\)</span> is a
 Gaussian random variable with vanishing mean and unit variance. Then
 (3.88) is <span class="math display">\[
 \left\langle\tilde{h}_i\right\rangle_{\backslash i}=\frac{J_0}{N} \sum_j
 m_j+\frac{J}{\sqrt{N}} \sum_j z_{i j} m_j-V_i m_i .
-\]</span> The first term on the right hand side is identified with <span
-class="math inline">\(J_0 m\)</span>, where <span
-class="math inline">\(m\)</span> is the ferromagnetic order parameter.
+\]</span> The first term on the right hand side is identified with <span class="math inline">\(J_0 m\)</span>, where <span class="math inline">\(m\)</span> is the ferromagnetic order parameter.
 The effects of the third term, the cavity correction, can be taken into
 account by treating only the second term under the assumption that each
 term <span class="math inline">\(z_{i j} m_j\)</span> is an independent
@@ -408,8 +366,7 @@ average of the cavity field and therefore the contribution from one site
 <span class="math inline">\(j\)</span> would not interfere with that
 from another site <span class="math inline">\(j\)</span>. Then the
 second term is Gaussian distributed according to the central limit
-theorem. The mean vanishes and the variance is <span
-class="math display">\[
+theorem. The mean vanishes and the variance is <span class="math display">\[
 \sum_j \sum_k\left[z_{i j} z_{i k}\right] m_j m_k=\sum_j m_j^2=N q .
 \]</span> Thus the second term (with the third term taken into account)
 is expressed as <span class="math inline">\(\sqrt{N q} z\)</span> with
@@ -421,62 +378,46 @@ m=\int \mathrm{D} z \tanh \beta\left(J_0 m+\sqrt{J q} z\right),
 \]</span> which is the RS equation of state (2.28). Averaging the square
 of (3.85) gives (2.30). One should remember that the amount of
 information in the TAP equation is larger than that of the RS equations
-of state because the former is a set of equations for <span
-class="math inline">\(N\)</span> variables whereas the latter is for the
+of state because the former is a set of equations for <span class="math inline">\(N\)</span> variables whereas the latter is for the
 macroscopic order parameters <span class="math inline">\(m\)</span> and
 <span class="math inline">\(q\)</span>. It is also possible to derive
 the results of RSB calculations with more elaborate arguments (Mézard et
 al. 1986).</p>
-<h1 id="properties-of-the-solution">3.5.3 Properties of the
-solution</h1>
+<h1><span id="353-properties-of-thesolution">3.5.3 Properties of the
+solution</span></h1>
 <p>To investigate the behaviour of the solution of the TAP equation
 (3.70) around the spin glass transition point, we assume that both the
-<span class="math inline">\(m_i\)</span> and <span
-class="math inline">\(h_i\)</span> are small and expand the right hand
+<span class="math inline">\(m_i\)</span> and <span class="math inline">\(h_i\)</span> are small and expand the right hand
 side to first order to obtain <span class="math display">\[
 m_i=\beta \sum_j J_{i j} m_j+\beta h_i-\beta^2 J^2 m_i
 \]</span></p>
 <p>This linear equation (3.96) can be solved by the eigenvalues and
-eigenvectors of the symmetric matrix <span
-class="math inline">\(J\)</span>. Let us for this purpose expand <span
-class="math inline">\(J_{i j}\)</span> by its eigenvectors as <span
-class="math display">\[
+eigenvectors of the symmetric matrix <span class="math inline">\(J\)</span>. Let us for this purpose expand <span class="math inline">\(J_{i j}\)</span> by its eigenvectors as <span class="math display">\[
 J_{i j}=\sum_\lambda J_\lambda\langle i \mid
 \lambda\rangle\langle\lambda \mid j\rangle .
-\]</span> We define the <span
-class="math inline">\(\lambda\)</span>-magnetization and <span
-class="math inline">\(\lambda\)</span>-field by <span
-class="math display">\[
+\]</span> We define the <span class="math inline">\(\lambda\)</span>-magnetization and <span class="math inline">\(\lambda\)</span>-field by <span class="math display">\[
 m_\lambda=\sum_i\langle\lambda \mid i\rangle m_i, \quad
 h_\lambda=\sum_i\langle\lambda \mid i\rangle h_i
 \]</span> and rewrite (3.96) as <span class="math display">\[
 m_\lambda=\beta m_\lambda J_\lambda+\beta h_\lambda-\beta^2 J^2
 m_\lambda .
-\]</span> Thus the <span
-class="math inline">\(\lambda\)</span>-susceptibility acquires the
+\]</span> Thus the <span class="math inline">\(\lambda\)</span>-susceptibility acquires the
 expression <span class="math display">\[
 \chi_\lambda=\frac{\partial m_\lambda}{\partial
 h_\lambda}=\frac{\beta}{1-\beta J_\lambda+(\beta J)^2} .
-\]</span> The eigenvalues of the random matrix <span
-class="math inline">\(\boldsymbol{J}\)</span> are known to be
-distributed between <span class="math inline">\(-2 J\)</span> and <span
-class="math inline">\(2 J\)</span> with the density <span
-class="math display">\[
+\]</span> The eigenvalues of the random matrix <span class="math inline">\(\boldsymbol{J}\)</span> are known to be
+distributed between <span class="math inline">\(-2 J\)</span> and <span class="math inline">\(2 J\)</span> with the density <span class="math display">\[
 \rho\left(J_\lambda\right)=\frac{\sqrt{4 J^2-J_\lambda^2}}{2 \pi J^2} .
 \]</span> It is thus clear from (3.100) that the susceptibility
-corresponding to the largest eigenvalue <span
-class="math inline">\(J_\lambda=2 J\)</span> diverges at <span
-class="math inline">\(T_{\mathrm{f}}=J\)</span>, implying a phase
-transition. This transition point <span
-class="math inline">\(T_{\mathrm{f}}=J\)</span> agrees with the replica
+corresponding to the largest eigenvalue <span class="math inline">\(J_\lambda=2 J\)</span> diverges at <span class="math inline">\(T_{\mathrm{f}}=J\)</span>, implying a phase
+transition. This transition point <span class="math inline">\(T_{\mathrm{f}}=J\)</span> agrees with the replica
 result.</p>
 <p>In a uniform ferromagnet, the uniform magnetization corresponding to
 the conventional susceptibility (which diverges at the transition point)
 develops below the transition point to form an ordered phase.
 Susceptibilities to all other external fields (such as a field with
 random sign at each site) do not diverge at any temperature. In the SK
-model, by contrast, there is a continuous spectrum of <span
-class="math inline">\(J_\lambda\)</span> and therefore, according to
+model, by contrast, there is a continuous spectrum of <span class="math inline">\(J_\lambda\)</span> and therefore, according to
 (3.100), various modes continue to diverge one after another below the
 transition point <span class="math inline">\(T_{\mathrm{f}}\)</span>
 where the mode with the largest eigenvalue shows a divergent
@@ -496,8 +437,7 @@ equation may, however, correspond to local minima, not the global minima
 of the free energy (3.73). It is indeed expected that the solutions
 satisfying the minimization condition of the free energy occupy only a
 fraction of the whole set of solutions of the TAP equation that has very
-many solutions of <span
-class="math inline">\(\mathcal{O}\left(\mathrm{e}^{a
+many solutions of <span class="math inline">\(\mathcal{O}\left(\mathrm{e}^{a
 N}\right)(a&gt;0)\)</span>.</p>
 
     </div>

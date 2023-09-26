@@ -176,16 +176,14 @@
     
     
     <div class="post-body" itemprop="articleBody"><blockquote>
-<p><strong>Abstract</strong><br />
-主要参考了 Nishimori 的 <a
-target="_blank" rel="noopener" href="https://searchworks.stanford.edu/view/4790812"><em>Statistical
+<p><strong>Abstract</strong><br>
+主要参考了 Nishimori 的 <a target="_blank" rel="noopener" href="https://searchworks.stanford.edu/view/4790812"><em>Statistical
 Physics of Spin Glasses and Information Processing An
-Introduction</em></a> 第二章以及 Haozhe Shan 的笔记 <a
-target="_blank" rel="noopener" href="https://hzshan.github.io/replica_method_in_SK_model.pdf"><em>Replica
+Introduction</em></a> 第二章以及 Haozhe Shan 的笔记 <a target="_blank" rel="noopener" href="https://hzshan.github.io/replica_method_in_SK_model.pdf"><em>Replica
 calculations for the SK model</em></a>.</p>
 </blockquote>
 <span id="more"></span>
-<h1 id="parisi-solution">1. Parisi solution</h1>
+<h1><span id="1-parisi-solution">1. Parisi solution</span></h1>
 <p>把序参量 ${q_{}}() $ 视为一个 <span class="math inline">\(n \times
 n\)</span> 的矩阵，那么复本对称假设即 <span class="math display">\[
 \left\{q_{\alpha \beta}\right\}=\left(\begin{array}{cccccc}
@@ -231,7 +229,7 @@ q_2 &amp; q_2 &amp; 0 &amp; &amp; &amp; \\
 \end{array}
 \end{array}\right)
 \]</span></p>
-<h1 id="first-step-rsb">2. First-step RSB</h1>
+<h1><span id="2-first-step-rsb">2. First-step RSB</span></h1>
 <p>回顾使用复本对称假设之前的自由能 <span class="math display">\[
 \begin{aligned}
 \beta [f] =\lim_{n \rightarrow 0}\left\{-\frac{\beta^2 J^2}{4}
@@ -321,9 +319,7 @@ v\right)\Big]\Big\}^{m_1}\right\}^{n / m_1} \\
 \int D v\left\{2 \cosh \Big[\beta\left(J_0 m+h+\beta J \sqrt{q_0} u+J
 \sqrt{q_1-q_0} v\right)\Big]\right\}^{m_1}\Big\}\right\}
 \end{aligned}
-\]</span> expand exponent around 0 and expand <span
-class="math inline">\(\log\)</span> around 1 <span
-class="math display">\[
+\]</span> expand exponent around 0 and expand <span class="math inline">\(\log\)</span> around 1 <span class="math display">\[
 \begin{aligned}
 \Delta &amp;\approx \frac{1}{n} \log \left\{1+\frac{n}{m_1} \int D u
 \log \left\{\int D v\left\{2 \cosh \Big[\beta\left(J_0 m+h+\beta J
@@ -361,19 +357,15 @@ v\right)\Big]\right\}^{m_1}\right\}
 \tanh ^2 \Xi}{\int \mathrm{D} v \cosh ^{m_1} \Xi}
 \end{aligned}
 \]</span></p>
-<h1 id="stability-of-the-first-step-rsb">3. Stability of the first step
-RSB</h1>
+<h1><span id="3-stability-of-the-first-steprsb">3. Stability of the first step
+RSB</span></h1>
 <p>3.2.3 Stability of the first step RSB The stability of 1RSB can be
-investigated by a direct generalization of the argument in <span
-class="math inline">\(\S 3.1\)</span>. We mention only a few main points
+investigated by a direct generalization of the argument in <span class="math inline">\(\S 3.1\)</span>. We mention only a few main points
 for the case <span class="math inline">\(J_0=h=0\)</span>. It is
-sufficient to treat two cases: one with all indices <span
-class="math inline">\(\alpha, \beta, \gamma, \delta\)</span> of the
+sufficient to treat two cases: one with all indices <span class="math inline">\(\alpha, \beta, \gamma, \delta\)</span> of the
 Hessian elements within the same block and the other with indices in two
 different blocks.</p>
-<p>If <span class="math inline">\(\alpha\)</span> and <span
-class="math inline">\(\beta\)</span> in <span
-class="math inline">\(q_{\alpha \beta}\)</span> belong to the same
+<p>If <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> in <span class="math inline">\(q_{\alpha \beta}\)</span> belong to the same
 block, the stability condition of the replicon mode for infinitesimal
 deviations from 1RSB is expressed as <span class="math display">\[
 \lambda_3=P-2 Q+R=1-\beta^2 J^2 \int \mathrm{D} u \frac{\int \mathrm{D}
@@ -388,19 +380,16 @@ stability condition reads <span class="math display">\[
 is sufficient. Equation (3.35) is not satisfied in the spin glass phase
 similar to the case of the RSB solution. However, the absolute value of
 the eigenvalue is confirmed by numerical evaluation to be smaller than
-that of the RS solution although <span
-class="math inline">\(\lambda_3\)</span> is still negative. This
+that of the RS solution although <span class="math inline">\(\lambda_3\)</span> is still negative. This
 suggests an improvement towards a stable solution. The entropy per spin
-at <span class="math inline">\(J_0=0, T=0\)</span> reduces from <span
-class="math inline">\(-0.16(=-1 / 2 \pi)\)</span> for the RS solution to
+at <span class="math inline">\(J_0=0, T=0\)</span> reduces from <span class="math inline">\(-0.16(=-1 / 2 \pi)\)</span> for the RS solution to
 -0.01 for the 1RSB. Thus we may expect to obtain still better results if
 we go further into replica symmetry breaking.</p>
-<h1 id="full-rsb-solution">4. Full RSB solution</h1>
+<h1><span id="4-full-rsb-solution">4. Full RSB solution</span></h1>
 <p>3.3 Full RSB solution Let us proceed with the calculation of the free
 energy (2.17) by a multiple-step RSB. We restrict ourselves to the case
 <span class="math inline">\(J_0=0\)</span> for simplicity. 3.3.1
-Physical quantities The sum involving <span
-class="math inline">\(q_{\alpha \beta}^2\)</span> in the free energy
+Physical quantities The sum involving <span class="math inline">\(q_{\alpha \beta}^2\)</span> in the free energy
 (2.17) can be expressed at the <span class="math inline">\(K\)</span> th
 step of RSB ( <span class="math inline">\(K\)</span>-RSB) as follows by
 counting the number of elements in a similar way to the 1RSB case
@@ -422,8 +411,7 @@ use the replacement <span class="math inline">\(m_j-m_{j+1}
 \rightarrow-\int_0^1 q^l(x) \mathrm{d} x
 \]</span> The internal energy for <span class="math inline">\(J_0=0,
 h=0\)</span> is given by differentiation of the free energy (2.17) by
-<span class="math inline">\(\beta\)</span> as <span
-class="math inline">\(^2\)</span> <span class="math display">\[
+<span class="math inline">\(\beta\)</span> as <span class="math inline">\(^2\)</span> <span class="math display">\[
 E=-\frac{\beta J^2}{2}\left(1+\frac{2}{n} \sum_{\alpha&lt;\beta}
 q_{\alpha \beta}^2\right) \rightarrow-\frac{\beta
 J^2}{2}\left(1-\int_0^1 q^2(x) \mathrm{d} x\right) .
@@ -443,20 +431,15 @@ Parisi equation <span class="math display">\[
 \frac{\partial f_0(x, h)}{\partial x}=-\frac{J^2}{2} \frac{\mathrm{d}
 q}{\mathrm{~d} x}\left\{\frac{\partial^2 f_0}{\partial
 h^2}+x\left(\frac{\partial f_0}{\partial h}\right)^2\right\}
-\]</span> to be solved under the initial condition <span
-class="math inline">\(f_0(1, h)=\log 2 \cosh \beta h\)</span>.</p>
+\]</span> to be solved under the initial condition <span class="math inline">\(f_0(1, h)=\log 2 \cosh \beta h\)</span>.</p>
 <p>3.3.2 Order parameter near the critical point It is in general very
 difficult to find a solution to the extremization condition of the free
-energy (3.41) with respect to the order function <span
-class="math inline">\(q(x)\)</span>. It is nevertheless possible to
+energy (3.41) with respect to the order function <span class="math inline">\(q(x)\)</span>. It is nevertheless possible to
 derive some explicit results by the Landau expansion when the
-temperature is close to the critical point and consequently <span
-class="math inline">\(q(x)\)</span> is small. Let us briefly explain the
+temperature is close to the critical point and consequently <span class="math inline">\(q(x)\)</span> is small. Let us briefly explain the
 essence of this procedure.</p>
 <p>When <span class="math inline">\(J_0=h=0\)</span>, the expansion of
-the free energy (2.17) to fourth order in <span
-class="math inline">\(q_{\alpha \beta}\)</span> turns out to be <span
-class="math display">\[
+the free energy (2.17) to fourth order in <span class="math inline">\(q_{\alpha \beta}\)</span> turns out to be <span class="math display">\[
 \begin{aligned}
 \beta f= &amp; \lim _{n \rightarrow 0}
 \frac{1}{n}\left\{\frac{1}{4}\left(\frac{T^2}{T_{\mathrm{f}}^2}-1\right)
@@ -466,42 +449,31 @@ class="math display">\[
 \gamma}^2-\frac{1}{12} \sum_{\alpha \neq \beta} Q_{\alpha
 \beta}^4\right\},
 \end{aligned}
-\]</span> where we have dropped <span
-class="math inline">\(q\)</span>-independent terms. The operator Tr here
+\]</span> where we have dropped <span class="math inline">\(q\)</span>-independent terms. The operator Tr here
 denotes the diagonal sum in the replica space. We have introduced the
 notation <span class="math inline">\(Q_{\alpha \beta}=(\beta J)^2
 q_{\alpha \beta}\)</span>. Only the last term is relevant to the RSB. It
 can indeed be verified that the eigenvalue of the replicon mode that
 determines stability of the RS solution is, by setting the coefficient
 of the last term to <span class="math inline">\(-y\)</span> (which is
-actually <span class="math inline">\(-1 / 12)\)</span> <span
-class="math display">\[
+actually <span class="math inline">\(-1 / 12)\)</span> <span class="math display">\[
 \lambda_3=-16 y \theta^2,
-\]</span> where <span
-class="math inline">\(\theta=\left(T_{\mathrm{f}}-T\right) /
+\]</span> where <span class="math inline">\(\theta=\left(T_{\mathrm{f}}-T\right) /
 T_{\mathrm{f}}\)</span>. We may thus neglect all fourth-order terms
 except <span class="math inline">\(Q_{\alpha \beta}^4\)</span> to
-discuss the essential features of the RSB and let <span
-class="math inline">\(n \rightarrow 0\)</span> to get <span
-class="math display">\[
+discuss the essential features of the RSB and let <span class="math inline">\(n \rightarrow 0\)</span> to get <span class="math display">\[
 \beta f=\frac{1}{2} \int_0^1 \mathrm{~d} x\left\{|\theta|
 q^2(x)-\frac{1}{3} x q^3(x)-q(x) \int_0^x q^2(y) \mathrm{d}
 y+\frac{1}{6} q^4(x)\right\} .
-\]</span> The extremization condition with respect to <span
-class="math inline">\(q(x)\)</span> is written explicitly as <span
-class="math display">\[
+\]</span> The extremization condition with respect to <span class="math inline">\(q(x)\)</span> is written explicitly as <span class="math display">\[
 2|\theta| q(x)-x q^2(x)-\int_0^x q^2(y) \mathrm{d} y-2 q(x) \int_x^1
 q(y) \mathrm{d} y+\frac{2}{3} q^3(x)=0 .
-\]</span> Differentiation of this formula gives <span
-class="math display">\[
+\]</span> Differentiation of this formula gives <span class="math display">\[
 |\theta|-x q(x)-\int_x^1 q(y) \mathrm{d} y+q^2(x)=0 \quad \text { or }
 \quad q^{\prime}(x)=0 .
-\]</span> Still further differentiation leads to <span
-class="math display">\[
+\]</span> Still further differentiation leads to <span class="math display">\[
 q(x)=\frac{x}{2} \quad \text { or } \quad q^{\prime}(x)=0 .
-\]</span> The RS solution corresponds to a constant <span
-class="math inline">\(q(x)\)</span>. This constant is equal to <span
-class="math inline">\(|\theta|\)</span> according to (3.46). There also
+\]</span> The RS solution corresponds to a constant <span class="math inline">\(q(x)\)</span>. This constant is equal to <span class="math inline">\(|\theta|\)</span> according to (3.46). There also
 exists an <span class="math inline">\(x\)</span>-dependent solution
 <span class="math display">\[
 \begin{aligned}
@@ -511,16 +483,12 @@ exists an <span class="math inline">\(x\)</span>-dependent solution
 \]</span> By inserting this solution in the variational condition
 (3.46), we obtain <span class="math display">\[
 q(1)=|\theta|+\mathcal{O}\left(\theta^2\right)
-\]</span> Figure 3.2 shows the resulting behaviour of <span
-class="math inline">\(q(x)\)</span> near the critical point where <span
-class="math inline">\(\theta\)</span> is close to zero.</p>
+\]</span> Figure 3.2 shows the resulting behaviour of <span class="math inline">\(q(x)\)</span> near the critical point where <span class="math inline">\(\theta\)</span> is close to zero.</p>
 <p>The susceptibility is a constant <span class="math inline">\(\chi=1 /
-J\)</span> near the critical point <span
-class="math inline">\(T_{\mathrm{f}}\)</span> because the integral in
+J\)</span> near the critical point <span class="math inline">\(T_{\mathrm{f}}\)</span> because the integral in
 (3.40) is <span class="math inline">\(1-T / T_{\mathrm{f}}\)</span>
 according to (3.49)-(3.51). It turns out in fact that this result
-remains valid not only near <span
-class="math inline">\(T_{\mathrm{f}}\)</span> but over the whole
+remains valid not only near <span class="math inline">\(T_{\mathrm{f}}\)</span> but over the whole
 temperature range below the critical point. We use this fact to show
 that the phase boundary between the spin glass and ferromagnetic phases
 is a vertical line at <span class="math inline">\(J_0=J\)</span> as in
@@ -530,29 +498,21 @@ centre of distribution of <span class="math inline">\(J_{i j}\)</span>
 from 0 to <span class="math inline">\(J_0 / N\)</span> shifts the energy
 per spin by <span class="math inline">\(-J_0 \mathrm{~m}^2 / 2\)</span>.
 Thus the free energy <span class="math inline">\(f\left(T, m,
-J_0\right)\)</span> as a function of <span
-class="math inline">\(T\)</span> and <span
-class="math inline">\(m\)</span> satisfies <span class="math display">\[
+J_0\right)\)</span> as a function of <span class="math inline">\(T\)</span> and <span class="math inline">\(m\)</span> satisfies <span class="math display">\[
 f\left(T, m, J_0\right)=f(T, m, 0)-\frac{1}{2} J_0 m^2 .
 \]</span> From the thermodynamic relation <span class="math display">\[
 \frac{\partial f(T, m, 0)}{\partial m}=h
 \]</span> and the fact that <span class="math inline">\(m=0\)</span>
-when <span class="math inline">\(J_0=0\)</span> and <span
-class="math inline">\(h=0\)</span>, we obtain <span
-class="math display">\[
+when <span class="math inline">\(J_0=0\)</span> and <span class="math inline">\(h=0\)</span>, we obtain <span class="math display">\[
 \left.\left.\chi^{-1}=\left(\frac{\partial m}{\partial h}\right]_{h
 \rightarrow 0}\right)^{-1}=\frac{\partial^2 f(T, m, 0)}{\partial
 m^2}\right]_{m \rightarrow 0} .
-\]</span> Thus, for sufficiently small <span
-class="math inline">\(m\)</span>, we have <span class="math display">\[
+\]</span> Thus, for sufficiently small <span class="math inline">\(m\)</span>, we have <span class="math display">\[
 f(T, m, 0)=f_0(T)+\frac{1}{2} \chi^{-1} m^2 .
-\]</span> Combining (3.52) and (3.55) gives <span
-class="math display">\[
+\]</span> Combining (3.52) and (3.55) gives <span class="math display">\[
 f\left(T, m, J_0\right)=f_0(T)+\frac{1}{2}\left(\chi^{-1}-J_0\right) m^2
 .
-\]</span> This formula shows that the coefficient of <span
-class="math inline">\(m^2\)</span> in <span
-class="math inline">\(f\left(T, m, J_0\right)\)</span> vanishes when
+\]</span> This formula shows that the coefficient of <span class="math inline">\(m^2\)</span> in <span class="math inline">\(f\left(T, m, J_0\right)\)</span> vanishes when
 <span class="math inline">\(\chi=\)</span> <span class="math inline">\(1
 / J_0\)</span> and therefore there is a phase transition between the
 ferromagnetic and non-ferromagnetic phases according to the Landau
@@ -564,8 +524,8 @@ phases exists at <span class="math inline">\(J_0=J\)</span>.</p>
 eigenvalue of the replicon mode is zero, implying marginal stability of
 the Parisi RSB solution. No other solutions have been found with a
 non-negative replicon eigenvalue of the Hessian.</p>
-<h1 id="physical-significance-of-rsb">5. Physical significance of
-RSB</h1>
+<h1><span id="5-physical-significance-ofrsb">5. Physical significance of
+RSB</span></h1>
 
     </div>
 

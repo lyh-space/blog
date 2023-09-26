@@ -184,7 +184,7 @@
 本文介绍了变分平均场理论以及信念传播算法</p>
 </blockquote>
 <span id="more"></span>
-<h1 id="引言">1. 引言</h1>
+<h1><span id="1-引言">1. 引言</span></h1>
 <p>对于一个真实分布</p>
 <p><span class="math display">\[
 P(\boldsymbol{x})=\frac{e^{-\beta E(x)}}{Z} \quad
@@ -192,24 +192,20 @@ P(\boldsymbol{x})=\frac{e^{-\beta E(x)}}{Z} \quad
 E(\boldsymbol{x})=-\sum_a J_a \prod_{i \in \partial a} x_i
 \]</span></p>
 <p>根据 <span class="math inline">\(Z\)</span> 可以计算Helmholtz自由能
-<span class="math inline">\(F_H=-\ln Z\)</span>，但是 <span
-class="math inline">\(Z\sim
+<span class="math inline">\(F_H=-\ln Z\)</span>，但是 <span class="math inline">\(Z\sim
 \mathcal{O}(N^2)\)</span>，很难直接计算。本节通过构造一个Gibbs自由能泛函
-<span class="math inline">\(F[b(x)]\)</span>（其中 <span
-class="math inline">\(b(x)\)</span>
-是真实分布）并使用变分方法使其逼近真实的Helmholtz自由能 <span
-class="math inline">\(F_H=-\ln Z\)</span>。</p>
+<span class="math inline">\(F[b(x)]\)</span>（其中 <span class="math inline">\(b(x)\)</span>
+是真实分布）并使用变分方法使其逼近真实的Helmholtz自由能 <span class="math inline">\(F_H=-\ln Z\)</span>。</p>
 <blockquote>
-<p><strong>最大熵规则：</strong><br />
-给定分布的约束下，系统的熵越大，信息量越大，越应该是真实的分布。说明如下：<br />
+<p><strong>最大熵规则：</strong><br>
+给定分布的约束下，系统的熵越大，信息量越大，越应该是真实的分布。说明如下：<br>
 对于一个未知分布 <span class="math inline">\(P_r\)</span>，其熵定义为
 <span class="math display">\[
 S=-k\sum_{r}P_r\ln P_r
 \]</span> 该分布要满足归一化和能量守恒（系统的总能量为定值）的约束，即
 <span class="math display">\[
 \sum_r P_r=1 \qquad \sum_r E_r P_r=\mu
-\]</span> 使用拉格朗日乘子法求解约束极值，构造Lagrangian <span
-class="math display">\[
+\]</span> 使用拉格朗日乘子法求解约束极值，构造Lagrangian <span class="math display">\[
 L=-k\sum_{r}P_r\ln P_r+\lambda_1\left(\sum_r
 P_r-1\right)+\lambda_2\left(\sum_r E_r P_r-\mu\right)
 \]</span> 取其变分为零 <span class="math display">\[
@@ -229,23 +225,18 @@ P_r=\exp\left( -1+\frac{\lambda_1}{k}+\frac{\lambda_2}{k}E_r\right)
 \exp\left(\frac{\lambda_2}{k}E_r\right)}
 \end{aligned}
 \]</span> 令 <span class="math inline">\(-\beta \equiv
-\frac{\lambda_2}{k}\)</span>，因此 <span
-class="math inline">\(P_r\)</span> 可写为 <span class="math display">\[
+\frac{\lambda_2}{k}\)</span>，因此 <span class="math inline">\(P_r\)</span> 可写为 <span class="math display">\[
 P_r=\frac{\exp\left(-\beta E_r\right)}{\sum_r \exp\left(-\beta
 E_r\right)}
-\]</span> 这正是真实分布中 <span
-class="math inline">\(P(\boldsymbol{x})\)</span> 的表达式。</p>
+\]</span> 这正是真实分布中 <span class="math inline">\(P(\boldsymbol{x})\)</span> 的表达式。</p>
 </blockquote>
-<h1 id="变分自由能">2. 变分自由能</h1>
+<h1><span id="2-变分自由能">2. 变分自由能</span></h1>
 <p>对于真实分布 <span class="math inline">\(b(x)\)</span>，Gibbs自由能
-<span class="math inline">\(F(b)\)</span> 是 <span
-class="math inline">\(b(x)\)</span> 的泛函，并且设 <span
-class="math inline">\(\beta=1\)</span>。在热力学中，Gibbs自由能写为</p>
+<span class="math inline">\(F(b)\)</span> 是 <span class="math inline">\(b(x)\)</span> 的泛函，并且设 <span class="math inline">\(\beta=1\)</span>。在热力学中，Gibbs自由能写为</p>
 <p><span class="math display">\[
 F(b)=U(b)-H(b)
 \]</span></p>
-<p>其中，<span class="math inline">\(U(b)\)</span> 是内能；<span
-class="math inline">\(H(b)\)</span>
+<p>其中，<span class="math inline">\(U(b)\)</span> 是内能；<span class="math inline">\(H(b)\)</span>
 是熵（而不是哈密顿量），他们分别写为</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -253,11 +244,8 @@ class="math inline">\(H(b)\)</span>
     &amp;H(b)=-\sum_x b(x) \ln b(x)
 \end{aligned}
 \]</span></p>
-<p>所谓的变分自由能就是指我们基于真实分布 <span
-class="math inline">\(b(x)\)</span> 构造的Gibbs自由能 <span
-class="math inline">\(F(b)\)</span>，因为是用变分的方法去逼近真实的Helmholtz自由能，所以又称为变分自由能。对Gibbs自由能
-<span class="math inline">\(F(b)\)</span> 和Helmholtz自由能 <span
-class="math inline">\(F_H\)</span> 作差，得</p>
+<p>所谓的变分自由能就是指我们基于真实分布 <span class="math inline">\(b(x)\)</span> 构造的Gibbs自由能 <span class="math inline">\(F(b)\)</span>，因为是用变分的方法去逼近真实的Helmholtz自由能，所以又称为变分自由能。对Gibbs自由能
+<span class="math inline">\(F(b)\)</span> 和Helmholtz自由能 <span class="math inline">\(F_H\)</span> 作差，得</p>
 <p><span class="math display">\[
 \begin{aligned}
 F(b)-F_H &amp;=\sum_{\boldsymbol{x}} b(\boldsymbol{x})
@@ -270,27 +258,18 @@ b(\boldsymbol{x})+\ln Z \\
 \frac{b(\boldsymbol{x})}{P(\boldsymbol{x})}=D_{KL}(b \| P)
 \end{aligned}
 \]</span></p>
-<p>其中，第二步用到了由 <span
-class="math inline">\(P(\boldsymbol{x})=\frac{e^{-
-E(\boldsymbol{x})}}{Z}\)</span> 得到的 <span
-class="math inline">\(E(\boldsymbol{x})=-\ln Z-\ln
+<p>其中，第二步用到了由 <span class="math inline">\(P(\boldsymbol{x})=\frac{e^{-
+E(\boldsymbol{x})}}{Z}\)</span> 得到的 <span class="math inline">\(E(\boldsymbol{x})=-\ln Z-\ln
 P(\boldsymbol{x})\)</span>。可以看到，二者之差为一个KL散度的形式。</p>
 <blockquote>
-<p><strong>Kullback-Leibler Divergence：</strong><br />
-KL散度是用来度量两个概率分布相似度的指标。假设对随机变量 <span
-class="math inline">\(\xi\)</span> 存在两个概率分布 <span
-class="math inline">\(P\)</span>、<span
-class="math inline">\(Q\)</span>，定义从 <span
-class="math inline">\(P\)</span> 到 <span
-class="math inline">\(Q\)</span> 的KL散度为 <span
-class="math display">\[
+<p><strong>Kullback-Leibler Divergence：</strong><br>
+KL散度是用来度量两个概率分布相似度的指标。假设对随机变量 <span class="math inline">\(\xi\)</span> 存在两个概率分布 <span class="math inline">\(P\)</span>、<span class="math inline">\(Q\)</span>，定义从 <span class="math inline">\(P\)</span> 到 <span class="math inline">\(Q\)</span> 的KL散度为 <span class="math display">\[
 \mathbb{D}_{\mathrm{KL}}(P \| Q)=\sum_i P(i) \ln
 \left(\frac{P(i)}{Q(i)}\right) \quad\text{或}\quad
 \int_{-\infty}^{\infty} p(\mathbf{x}) \ln
 \left(\frac{p(\mathbf{x})}{q(\mathbf{x})}\right) \mathrm{~d} \mathbf{x}
 \]</span>
-可以证明，KL散度具有非负性。以离散形式为例：根据Jensen's不等式， <span
-class="math display">\[
+可以证明，KL散度具有非负性。以离散形式为例：根据Jensen's不等式， <span class="math display">\[
 \sum_{i=1}^n \lambda_i f\left(x_i\right) \leq f\left(\sum_{i=1}^n
 \lambda_i x_i\right), \quad\sum_{i=1}^n \lambda_i=1
 \]</span> 并且有 <span class="math inline">\(\sum_i
@@ -303,23 +282,17 @@ P(i)\cdot \frac{Q(i)}{P(i)} \right)=\ln\left(\sum_i Q(i)\right)=\ln(1)=0
 \left(\frac{Q(i)}{P(i)}\right) \geq 0
 \]</span> 当且仅当<span class="math inline">\(P=Q\)</span>时取等号。</p>
 </blockquote>
-<p>根据KL散度的非负性，可以知道 <span
-class="math inline">\(F(b)-F_H=D_{KL}(b \| P)\geq
-0\)</span>，即变分自由能的最小值为Helmholtz自由能，此时分布 <span
-class="math inline">\(b(x)=P(x)\)</span>。</p>
-<p>为了求解自由能，我们首先要给定 <span
-class="math inline">\(b(x)\)</span>
-的一个具体形式。接下来两个小节分别给出了 <span
-class="math inline">\(b(x)\)</span> 的两种近似：Mean-Field
+<p>根据KL散度的非负性，可以知道 <span class="math inline">\(F(b)-F_H=D_{KL}(b \| P)\geq
+0\)</span>，即变分自由能的最小值为Helmholtz自由能，此时分布 <span class="math inline">\(b(x)=P(x)\)</span>。</p>
+<p>为了求解自由能，我们首先要给定 <span class="math inline">\(b(x)\)</span>
+的一个具体形式。接下来两个小节分别给出了 <span class="math inline">\(b(x)\)</span> 的两种近似：Mean-Field
 Approximation和Bethe Approximation。</p>
-<h1 id="mean-field-approximation">3. Mean-Field Approximation</h1>
-<p>Mean-Field Approximation是假设该分布由互相独立的自旋格点 <span
-class="math inline">\(x_i\in\{+1,-1\}\)</span> 组成，其均值即磁化强度为
+<h1><span id="3-mean-field-approximation">3. Mean-Field Approximation</span></h1>
+<p>Mean-Field Approximation是假设该分布由互相独立的自旋格点 <span class="math inline">\(x_i\in\{+1,-1\}\)</span> 组成，其均值即磁化强度为
 <span class="math display">\[
 m_i=(+1)\times \frac{1+m_{i}(+1)}{2}+(-1)\times \frac{1+m_{i}(-1)}{2}
 \]</span> 因此可以用 <span class="math inline">\(m_i\)</span>
-将单个格点的分布 <span class="math inline">\(b_i\)</span> 参数化： <span
-class="math display">\[
+将单个格点的分布 <span class="math inline">\(b_i\)</span> 参数化： <span class="math display">\[
 b_i(x_i)=\frac{1+m_ix_i}{2}
 \]</span>
 由于各个格点是相互独立的，系统的总分布就等于各个格点的分布相乘，因此系统的Mean-Field
@@ -336,8 +309,7 @@ b_i\left(x_i\right)\prod_{i \in \partial a} x_i \right]
 \end{aligned}
 \]</span> 注意到 <span class="math inline">\(x_i\)</span>
 是相互独立的，接下来的操作相当于是 <span class="math inline">\(\langle
-ab \rangle=\langle a \rangle\langle b \rangle\)</span>，其中 <span
-class="math inline">\(a\)</span>、<span class="math inline">\(b\)</span>
+ab \rangle=\langle a \rangle\langle b \rangle\)</span>，其中 <span class="math inline">\(a\)</span>、<span class="math inline">\(b\)</span>
 相互独立 <span class="math display">\[
 \begin{aligned}
 U_{M F} &amp; = -\sum_a J_a \left[\sum_{\boldsymbol{x}} \prod_i
@@ -362,14 +334,11 @@ x_i}{2} \\
 \sum_{x \backslash x_i} \prod_{j(\neq i)} \frac{1+m_j x_j}{2}=\sum_{x
 \backslash x_i}b_{MF\backslash x_i}=1
 \]</span> 即相当于去掉格点 <span class="math inline">\(i\)</span>
-后的系统的总分布，由于各格点相互独立，此时系统的分布仍是归一化的。<span
-class="math inline">\(S_i\)</span> 是单个自旋变量的熵 <span
-class="math display">\[
+后的系统的总分布，由于各格点相互独立，此时系统的分布仍是归一化的。<span class="math inline">\(S_i\)</span> 是单个自旋变量的熵 <span class="math display">\[
 S_i=-k_B\sum_ip_i\ln p_i=- \sum_{x_i} \frac{1+m_i x_i}{2} \ln
 \frac{1+m_i x_i}{2}
 \]</span> 式中，已令 <span class="math inline">\(\beta=1\)</span>，因此
-<span class="math inline">\(k_B=\frac{1}{\beta}=1\)</span>，<span
-class="math inline">\(p_i\)</span> 在此处是Mean-Field Approximation下的
+<span class="math inline">\(k_B=\frac{1}{\beta}=1\)</span>，<span class="math inline">\(p_i\)</span> 在此处是Mean-Field Approximation下的
 <span class="math inline">\(b_i\)</span>。</p>
 <p>因此变分自由能为 <span class="math display">\[
 \begin{aligned}
@@ -394,26 +363,21 @@ m_i=\frac{e^{2A}-1}{e^{2A}+1}=\frac{e^{A}-e^{-A}}{e^{A}+e^{-A}}=\tanh A
 \]</span> 即 <span class="math display">\[
 m_i=\tanh \left(\sum_{a \in \partial i} J_a \prod_{j \in \partial a
 \backslash i} m_j\right)
-\]</span> 这是一个迭代方程，将其迭代到不动点即可解出 <span
-class="math inline">\(m_i\)</span> 并找到此时对应的真实分布</p>
-<h1 id="bethe-approximation">4. Bethe Approximation</h1>
-<h2 id="bethe-approximation与信念传播算法">4.1 Bethe
-Approximation与信念传播算法</h2>
+\]</span> 这是一个迭代方程，将其迭代到不动点即可解出 <span class="math inline">\(m_i\)</span> 并找到此时对应的真实分布</p>
+<h1><span id="4-bethe-approximation">4. Bethe Approximation</span></h1>
+<h2><span id="41-betheapproximation与信念传播算法">4.1 Bethe
+Approximation与信念传播算法</span></h2>
 <p>注意到Mean-Field
 Approximation要求各个格点之间完全相互独立，这只能在温度比较高的时候实现，对于温度较低的情况，必须要考虑格点之间的关联。本节中的Bethe
 Approximation就引入了格点间的部分关联。</p>
 <p>仍然使用如下的分布 <span class="math display">\[
 P(\boldsymbol{x})=\frac{e^{-\beta E(x)}}{Z} \qquad
 E(\boldsymbol{x})=-\sum_a J_a \prod_{i \in \partial a} x_i
-\]</span> 为了更好地在因子图中表示，我们首先进行一个变量替换，令 <span
-class="math display">\[
+\]</span> 为了更好地在因子图中表示，我们首先进行一个变量替换，令 <span class="math display">\[
 f_a(\boldsymbol{x}_a)=e^{J_a \prod_{i \in \partial a} x_i}
 \]</span> <span class="math inline">\(f_a(\boldsymbol{x}_a)\)</span>
-表示一个相互作用 <span class="math inline">\(a\)</span>，其中 <span
-class="math inline">\(\boldsymbol{x}_a\)</span>
-表示参与该相互作用的所有自旋变量。同样令 <span
-class="math inline">\(\beta=1\)</span>，因此 <span
-class="math display">\[
+表示一个相互作用 <span class="math inline">\(a\)</span>，其中 <span class="math inline">\(\boldsymbol{x}_a\)</span>
+表示参与该相互作用的所有自旋变量。同样令 <span class="math inline">\(\beta=1\)</span>，因此 <span class="math display">\[
 \begin{aligned}
 &amp; P(\boldsymbol{x})=\frac{1}{Z} \prod_a
 f_a\left(\boldsymbol{x}_a\right) \\
@@ -421,11 +385,10 @@ f_a\left(\boldsymbol{x}_a\right) \\
 \end{aligned}
 \]</span> 显然，此时分布 <span class="math inline">\(P(x)\)</span>
 是因子连乘的形式，用因子图表示为</p>
-<p><img src="\blog\img\SMNN\因子图划分区域.png" /></p>
+<p><img src="\blog\img\SMNN\因子图划分区域.png"></p>
 <p>这里variable node是表示自旋的变量节点，function
 node是表示相互作用的功能节点。对这个因子图进行区域划分，每一个区域都要将与其中的功能节点相连的所有变量节点都包含在里面。上图中的黄色虚线圈出来的不能算作一个区域，因为与功能节点A相连的变量节点2没有被包含在其中。</p>
-<p>对于一个区域 <span
-class="math inline">\(R\)</span>，我们可以计算其内部的变分内能和变分熵：
+<p>对于一个区域 <span class="math inline">\(R\)</span>，我们可以计算其内部的变分内能和变分熵：
 <span class="math display">\[
 \begin{aligned}
 &amp; E_R\left(x_R\right)=-\sum_{a \in R} \ln
@@ -435,8 +398,7 @@ b_R\left(\boldsymbol{x}_R\right) E_R\left(\boldsymbol{x}_R\right) \\
 &amp; H_R\left(b_R\right)=-\sum_{\boldsymbol{x}_R}
 b_R\left(\boldsymbol{x}_R\right) \ln b_R\left(\boldsymbol{x}_R\right)
 \end{aligned}
-\]</span> 然后将各个区域的变分内能和变分熵相加，即 <span
-class="math display">\[
+\]</span> 然后将各个区域的变分内能和变分熵相加，即 <span class="math display">\[
 \begin{gathered}
 U_{\mathcal{R}}=\sum_{R \in \mathcal{R}} C_R U_R\left(b_R\right)\\
 H_{\mathcal{R}}=\sum_{R \in \mathcal{R}} C_R H_R\left(b_R\right)
@@ -449,47 +411,22 @@ H_{\mathcal{R}}=\sum_{R \in \mathcal{R}} C_R H_R\left(b_R\right)
 \sum_{R \in \mathbb{R}} \mathbb{I}[i \in R] C_R=1, \forall i
 \end{gathered}
 \]</span> <span class="math inline">\(\mathbb{I}[a \in R]\)</span>
-表示如果功能节点 <span class="math inline">\(a\)</span> 在区域 <span
-class="math inline">\(R\)</span> 中，则其取值为 <span
-class="math inline">\(1\)</span>，否则为 <span
-class="math inline">\(0\)</span>；同理，<span
-class="math inline">\(\mathbb{I}[i \in R]\)</span> 表示如果变量节点
-<span class="math inline">\(i\)</span> 在区域 <span
-class="math inline">\(R\)</span> 中，则其取值为 <span
-class="math inline">\(1\)</span>，否则为 <span
-class="math inline">\(0\)</span>。</p>
-<p><span class="math inline">\(\mathbb{I}[a \in R]\)</span> 与 <span
-class="math inline">\(C_R\)</span> 相乘再求和后等于 <span
-class="math inline">\(1\)</span> 表示节点 <span
-class="math inline">\(a\)</span> 只被考虑了一次，因此上式对于 <span
-class="math inline">\(C_R\)</span>
+表示如果功能节点 <span class="math inline">\(a\)</span> 在区域 <span class="math inline">\(R\)</span> 中，则其取值为 <span class="math inline">\(1\)</span>，否则为 <span class="math inline">\(0\)</span>；同理，<span class="math inline">\(\mathbb{I}[i \in R]\)</span> 表示如果变量节点
+<span class="math inline">\(i\)</span> 在区域 <span class="math inline">\(R\)</span> 中，则其取值为 <span class="math inline">\(1\)</span>，否则为 <span class="math inline">\(0\)</span>。</p>
+<p><span class="math inline">\(\mathbb{I}[a \in R]\)</span> 与 <span class="math inline">\(C_R\)</span> 相乘再求和后等于 <span class="math inline">\(1\)</span> 表示节点 <span class="math inline">\(a\)</span> 只被考虑了一次，因此上式对于 <span class="math inline">\(C_R\)</span>
 的约束实际上是要求所有的变量节点和功能节点在求和时只被考虑一次，这是就划分区域的要求。</p>
 <p>Bethe Approximation划分区域的方式如下图所示</p>
-<p><img src="\blog\img\SMNN\Bethe近似的划分方式.png" /></p>
+<p><img src="\blog\img\SMNN\Bethe近似的划分方式.png"></p>
 <p>划分的区域有两种，一种称作“大区域”，是包含一个功能节点以及所有与其相连的变量节点的区域；另一种称作“小区域”，只包含一个变量节点。大区域的计数设为
-<span class="math inline">\(1\)</span>，小区域的计数设为 <span
-class="math inline">\(1-d_i\)</span>，其中 <span
-class="math inline">\(d_i\)</span> 是变量节点 <span
-class="math inline">\(i\)</span> 参与的功能节点的数量，即 <span
-class="math display">\[
+<span class="math inline">\(1\)</span>，小区域的计数设为 <span class="math inline">\(1-d_i\)</span>，其中 <span class="math inline">\(d_i\)</span> 是变量节点 <span class="math inline">\(i\)</span> 参与的功能节点的数量，即 <span class="math display">\[
 C_{R_{L}}=1,\quad C_{R_{S}}=1-d_i
-\]</span> 这种划分方式和计数方式很自然地满足了上面对于 <span
-class="math inline">\(C_R\)</span>
+\]</span> 这种划分方式和计数方式很自然地满足了上面对于 <span class="math inline">\(C_R\)</span>
 的两条约束：对于第一条（针对功能节点的）约束，只有大区域中有功能节点参与了求和，并且对于每个功能节点
-<span class="math inline">\(a\)</span>，当其包含在某个区域 <span
-class="math inline">\(R\)</span> 中使得 <span
-class="math inline">\(\mathbb{I}[a \in R]=1\)</span>
-时，都有且仅有这一个区域的计数 <span
-class="math inline">\(C_{R_L}=1\)</span>；对于第二条（针对变量节点的）约束，每个变量节点
-<span class="math inline">\(i\)</span> 在其参与的 <span
-class="math inline">\(d_i\)</span> 个大区域（功能节点）中使得 <span
-class="math inline">\(\mathbb{I}[a \in
-R]=1,\,C_{R_{L}}=1\)</span>，并且使得其自身所在的小区域 <span
-class="math inline">\(\mathbb{I}[a \in
-R]=1,\,C_{R_{S}}=1-d_i\)</span>，所有大区域的求和为 <span
-class="math inline">\(d_i\)</span>，只有一个小区域参与了求和为 <span
-class="math inline">\(1-d_i\)</span>，因此总的求和为 <span
-class="math inline">\(1\)</span>。</p>
+<span class="math inline">\(a\)</span>，当其包含在某个区域 <span class="math inline">\(R\)</span> 中使得 <span class="math inline">\(\mathbb{I}[a \in R]=1\)</span>
+时，都有且仅有这一个区域的计数 <span class="math inline">\(C_{R_L}=1\)</span>；对于第二条（针对变量节点的）约束，每个变量节点
+<span class="math inline">\(i\)</span> 在其参与的 <span class="math inline">\(d_i\)</span> 个大区域（功能节点）中使得 <span class="math inline">\(\mathbb{I}[a \in
+R]=1,\,C_{R_{L}}=1\)</span>，并且使得其自身所在的小区域 <span class="math inline">\(\mathbb{I}[a \in
+R]=1,\,C_{R_{S}}=1-d_i\)</span>，所有大区域的求和为 <span class="math inline">\(d_i\)</span>，只有一个小区域参与了求和为 <span class="math inline">\(1-d_i\)</span>，因此总的求和为 <span class="math inline">\(1\)</span>。</p>
 <p>Bethe
 Approximation划分区域后，只考虑各个区域（主要指大区域）内部的相互作用，不考虑区域与区域间的相互作用，实际上是一个只考虑最近邻的相互作用的模型。</p>
 <p>根据以上划分的区域，变分内能为 <span class="math display">\[
@@ -504,14 +441,9 @@ f_a\left(\boldsymbol{x}_a\right)
 \end{aligned}
 \]</span>
 这里由于哈密顿量没有外场，实际上只有大区域贡献了内能，因此第一行中的求和下标
-<span class="math inline">\(R\in\mathcal{R}\)</span> 有 <span
-class="math inline">\(a\)</span>
-个，并且每个大区域中只有一个功能节点，第二行中的求和下标 <span
-class="math inline">\(a\in R\)</span> 实际上只对一个 <span
-class="math inline">\(a\)</span> 求和，<span
-class="math inline">\(C_R=C_{R_L}=1\)</span>。如果哈密顿量是具有外场的形式，那么求Bethe内能时也需要考虑小区域的作用。</p>
-<p>变分熵为（大区域和小区域分别计算后求和） <span
-class="math display">\[
+<span class="math inline">\(R\in\mathcal{R}\)</span> 有 <span class="math inline">\(a\)</span>
+个，并且每个大区域中只有一个功能节点，第二行中的求和下标 <span class="math inline">\(a\in R\)</span> 实际上只对一个 <span class="math inline">\(a\)</span> 求和，<span class="math inline">\(C_R=C_{R_L}=1\)</span>。如果哈密顿量是具有外场的形式，那么求Bethe内能时也需要考虑小区域的作用。</p>
+<p>变分熵为（大区域和小区域分别计算后求和） <span class="math display">\[
 \begin{aligned}
 H_{\text {Bethe }}= &amp;\sum_{R \in \mathcal{R}} C_R
 H_R\left(b_R\right)=\sum_{R \in \mathcal{R}} C_R
@@ -534,8 +466,7 @@ b_a\left(\boldsymbol{x}_a\right) \ln b_a\left(\boldsymbol{x}_a\right) \\
 &amp;-\sum_i\left(d_i-1\right) \sum_{x_i} b_i\left(x_i\right) \ln
 b_i\left(x_i\right)
 \end{aligned}
-\]</span> 在这里我们对变分自由能取机制时存在一些约束： <span
-class="math display">\[
+\]</span> 在这里我们对变分自由能取机制时存在一些约束： <span class="math display">\[
 \begin{aligned}
 &amp; \sum_{x_i} b_i\left(x_i\right)=1, \forall i \\
 &amp; \sum_{\boldsymbol{x}_a} b_a\left(\boldsymbol{x}_a\right)=1,
@@ -544,14 +475,9 @@ class="math display">\[
 b_a\left(\boldsymbol{x}_a\right)=b_i\left(x_i\right), \forall i, a
 \end{aligned}
 \]</span>
-前两条是归一化条件，第三条则是边际的一致性条件，即如果一个变量节点 <span
-class="math inline">\(i\)</span> 参与了功能节点 <span
-class="math inline">\(a\)</span>，那么参与功能节点 <span
-class="math inline">\(a\)</span> 的除了 <span
-class="math inline">\(i\)</span> 以外的所有变量节点的分布求和后等于
+前两条是归一化条件，第三条则是边际的一致性条件，即如果一个变量节点 <span class="math inline">\(i\)</span> 参与了功能节点 <span class="math inline">\(a\)</span>，那么参与功能节点 <span class="math inline">\(a\)</span> 的除了 <span class="math inline">\(i\)</span> 以外的所有变量节点的分布求和后等于
 <span class="math inline">\(i\)</span> 的分布。</p>
-<p>因此用拉格朗日乘子法求条件极值时首先构造Lagrangian <span
-class="math display">\[
+<p>因此用拉格朗日乘子法求条件极值时首先构造Lagrangian <span class="math display">\[
 \begin{aligned}
 L= &amp; -\sum_a \sum_{\boldsymbol{x}_a}
 b_a\left(\boldsymbol{x}_a\right) \ln
@@ -577,9 +503,7 @@ b_i}=0\)</span>，得 <span class="math display">\[
 \left[\frac{1}{d_i-1}\left(1-\lambda_i+\sum_{a } \rho_{i,
 a}\left(x_i\right)\right)\right]
 \]</span> 这两个解来自于文献[2]和[5]，我自己还没有求解</p>
-<p>我们定义从把 <span class="math inline">\(a\)</span> 节点拿掉后 <span
-class="math inline">\(i\)</span> 节点传递给 <span
-class="math inline">\(a\)</span>
+<p>我们定义从把 <span class="math inline">\(a\)</span> 节点拿掉后 <span class="math inline">\(i\)</span> 节点传递给 <span class="math inline">\(a\)</span>
 的“消息”为（文献[1]、[2]中都提到这个定义，但是这里采用的解释来自文献[4]）
 <span class="math display">\[
 P_{i \rightarrow a}\equiv e^{\rho_{i,
@@ -604,17 +528,12 @@ a} P_{i \rightarrow a}\left(x_i\right)
 f_a\left(\boldsymbol{x}_a\right)\prod_{i\in\partial a} P_{i \rightarrow
 a}\left(x_i\right)
 \]</span></p>
-<p>再定义从节点 <span class="math inline">\(a\)</span> 传出到 <span
-class="math inline">\(i\)</span> 的“消息”为 <span
-class="math display">\[
+<p>再定义从节点 <span class="math inline">\(a\)</span> 传出到 <span class="math inline">\(i\)</span> 的“消息”为 <span class="math display">\[
 P_{a\to i}\equiv\frac{\hat{b}_i\left(x_i\right)}{P_{i\to a}}
-\]</span> 据文献[4]所说，对上式进行一些操作后可以将 <span
-class="math inline">\(\hat{b}_i(x_i)\)</span> 写为 <span
-class="math display">\[
+\]</span> 据文献[4]所说，对上式进行一些操作后可以将 <span class="math inline">\(\hat{b}_i(x_i)\)</span> 写为 <span class="math display">\[
 \hat{b}_i\left(x_i\right) \propto \prod_{a \in \partial i} P_{a
 \rightarrow i}\left(x_i\right)
-\]</span> 这一步具体怎么操作还没搞明白。并且，有可能是根据上面 <span
-class="math inline">\(P_{a\to i }\)</span>
+\]</span> 这一步具体怎么操作还没搞明白。并且，有可能是根据上面 <span class="math inline">\(P_{a\to i }\)</span>
 的定义和边际的一致性约束条件可以得到 <span class="math display">\[
 P_{a \rightarrow i}\left(x_i\right)=\sum_{\boldsymbol{x}_j: j \in
 \partial a \backslash i} f_a\left(\boldsymbol{x}_a\right) \prod_{j \in
@@ -626,16 +545,16 @@ P_{a \rightarrow i}\left(x_i\right)=\sum_{\boldsymbol{x}_j: j \in
 <p><strong>本节用到的参考文献：</strong>[1]~[7]
 文献[2]中有关于本节的较为详细和深入的内容，为整理本节的笔记提供了很大的帮助</p>
 </blockquote>
-<h2 id="一个例子bethe-approximation在树状因子图中是精确的">4.2
-一个例子：Bethe Approximation在树状因子图中是精确的</h2>
+<h2><span id="42一个例子bethe-approximation在树状因子图中是精确的">4.2
+一个例子：Bethe Approximation在树状因子图中是精确的</span></h2>
 <p>对于如下图所示的一个无环的树状因子图（从任意一个节点出发无法回到自身节点），对于这类因子图表示的网络，只存在最近邻相互作用，因此Bethe
 Approximation是精确的。</p>
-<p><img src="\blog\img\SMNN\无环的树状因子图.png" /></p>
+<p><img src="\blog\img\SMNN\无环的树状因子图.png"></p>
 <p>对于该因子图，其联合概率分布可以拆分为 <span class="math display">\[
 p\left(x_1, x_2, x_3, x_4\right)=\frac{1}{Z} f_A\left(x_1, x_2\right)
 f_B\left(x_2, x_3, x_4\right) f_C\left(x_4\right)
 \]</span> 我们考虑第二个变量节点，即下图中红色的节点</p>
-<p><img src="\blog\img\SMNN\带标注的无环的树状因子图.png" /></p>
+<p><img src="\blog\img\SMNN\带标注的无环的树状因子图.png"></p>
 <p>根据上面得到的迭代方程 <span class="math display">\[
 b_i\left(x_i\right) \propto \prod_{a \in \partial i} P_{a \rightarrow
 i}\left(x_i\right), \quad P_{a \rightarrow
@@ -651,13 +570,7 @@ A}\left(x_1\right)\right)\left(\sum_{x_3, x_4} f_B\left(x_2, x_3,
 x_4\right) P_{3 \rightarrow B}\left(x_3\right) P_{4 \rightarrow
 B}\left(x_4\right)\right)
 \end{aligned}
-\]</span> 注意到变量节点 <span class="math inline">\(1\)</span> 和 <span
-class="math inline">\(3\)</span> 都只参与了一个功能节点，因此 <span
-class="math inline">\(P_{1 \rightarrow A}\)</span> 和 <span
-class="math inline">\(P_{3 \rightarrow B}\)</span> 都等于 <span
-class="math inline">\(1\)</span>。变量节点 <span
-class="math inline">\(4\)</span> 参与了 <span
-class="math inline">\(B\)</span>、<span class="math inline">\(C\)</span>
+\]</span> 注意到变量节点 <span class="math inline">\(1\)</span> 和 <span class="math inline">\(3\)</span> 都只参与了一个功能节点，因此 <span class="math inline">\(P_{1 \rightarrow A}\)</span> 和 <span class="math inline">\(P_{3 \rightarrow B}\)</span> 都等于 <span class="math inline">\(1\)</span>。变量节点 <span class="math inline">\(4\)</span> 参与了 <span class="math inline">\(B\)</span>、<span class="math inline">\(C\)</span>
 两个功能节点，根据迭代方程 <span class="math display">\[
 P_{i \rightarrow a}=\frac{1}{Z_{i\to a}}\prod_{b\in i\backslash
 a}P_{b\to i}
@@ -665,9 +578,7 @@ a}P_{b\to i}
 P_{4 \rightarrow B}=P_{C\to 4}(x_4)
 \]</span> 再将 <span class="math inline">\(P_{C\to 4}(x_4)\)</span>
 放入迭代方程中，由于功能节点 <span class="math inline">\(C\)</span> 只与
-<span class="math inline">\(4\)</span> 这一个变量节点相连，<span
-class="math inline">\(P_{C\to 4}(x_4)=f_C(x_4)\)</span>。因此 <span
-class="math display">\[
+<span class="math inline">\(4\)</span> 这一个变量节点相连，<span class="math inline">\(P_{C\to 4}(x_4)=f_C(x_4)\)</span>。因此 <span class="math display">\[
 \begin{aligned}
 b_i\left(x_2\right) &amp; \propto\left(\sum_{x_1} f_A\left(x_1,
 x_2\right) P_{1 \rightarrow A}\left(x_1\right)\right)\left(\sum_{x_3,
@@ -684,11 +595,8 @@ f_B\left(x_2, x_3, x_4\right) f_C\left(x_4\right)
 \end{aligned}
 \]</span> 注意到 <span class="math inline">\(\sum_{x_1, x_3, x_4}
 f_A\left(x_1, x_2\right) f_B\left(x_2, x_3, x_4\right)
-f_C\left(x_4\right)\)</span> 正是因子图中变量节点 <span
-class="math inline">\(a\)</span> 的边际概率，即我们想要的 <span
-class="math inline">\(b_i(x_2)\)</span> 的形式。</p>
-<p>同样地，对于功能节点 <span class="math inline">\(B\)</span>，有 <span
-class="math display">\[
+f_C\left(x_4\right)\)</span> 正是因子图中变量节点 <span class="math inline">\(a\)</span> 的边际概率，即我们想要的 <span class="math inline">\(b_i(x_2)\)</span> 的形式。</p>
+<p>同样地，对于功能节点 <span class="math inline">\(B\)</span>，有 <span class="math display">\[
 \begin{aligned}
 b_a\left(x_B\right) &amp; \propto f_B\left(x_2, x_3, x_4\right) P_{2
 \rightarrow B}\left(x_2\right) P_{3 \rightarrow B}\left(x_3\right) P_{4
@@ -704,13 +612,10 @@ f_A\left(x_1, x_2\right)\right)\left(f_C\left(x_4\right)\right) \\
 &amp; \propto \sum_{x_1} f_A\left(x_1, x_2\right) f_B\left(x_2, x_3,
 x_4\right) f_C\left(x_4\right)
 \end{aligned}
-\]</span> 这也是 <span
-class="math inline">\(b_a\left(x_B\right)\)</span> 的精确的形式。</p>
-<p>类似地，我们可以证明，对于这个树状因子图中所有的 <span
-class="math inline">\(b_i(x_i)\)</span> 和 <span
-class="math inline">\(b_a(x_a)\)</span> 都是精确的。</p>
-<h2 id="bethe-approximation与空腔方法的等价性">4.3 Bethe
-Approximation与空腔方法的等价性</h2>
+\]</span> 这也是 <span class="math inline">\(b_a\left(x_B\right)\)</span> 的精确的形式。</p>
+<p>类似地，我们可以证明，对于这个树状因子图中所有的 <span class="math inline">\(b_i(x_i)\)</span> 和 <span class="math inline">\(b_a(x_a)\)</span> 都是精确的。</p>
+<h2><span id="43-betheapproximation与空腔方法的等价性">4.3 Bethe
+Approximation与空腔方法的等价性</span></h2>
 <p>接下来我们只考虑空腔概率 <span class="math inline">\(P_{i\to
 a}\)</span>，将 <span class="math display">\[
 P_{a \rightarrow i}\left(x_i\right)=\sum_{\boldsymbol{x}_j: j \in
@@ -728,24 +633,20 @@ P_{i \rightarrow a}\left(x_i\right)=\frac{1}{Z_{i \rightarrow a}}
 \backslash i} e^{J_a \prod_{i \in \partial a} x_i} \prod_{j \in \partial
 b \backslash i} P_{j \rightarrow b}\left(x_j\right)
 \]</span> 为了证明Bethe Approximation与空腔方法是等价的，我们先假设
-<span class="math inline">\(P_{j\to b}\)</span> 是一个空腔概率，根据<a
-href="https://lyhspace.com/blog/2023/07/18/SMNN-1/">空腔方法</a>第二小节中的内容，若
+<span class="math inline">\(P_{j\to b}\)</span> 是一个空腔概率，根据<a href="https://lyhspace.com/blog/2023/07/18/SMNN-1/">空腔方法</a>第二小节中的内容，若
 <span class="math inline">\(x_j\in\{\pm 1\}\)</span>，可以将其参数化为
 <span class="math display">\[
 P_{j\to b}(x_j)=\frac{1+m_{j\to b}x_j}{2}
 \]</span>
 接下来只要能根据该假设得到空腔的磁化强度的迭代方程，即说明该假设是自洽的。</p>
-<p>考虑 <span class="math inline">\(x_i=+1\)</span> 时，令 <span
-class="math display">\[
+<p>考虑 <span class="math inline">\(x_i=+1\)</span> 时，令 <span class="math display">\[
 A_b^{+}=\sum_{x_j: j \in \partial b \backslash i} e^{J_b \prod_{j \in
 \partial b \backslash i} x_j} \prod_{j \in \partial b \backslash i}
 \frac{1+m_{j \rightarrow b} x_j}{2}
-\]</span> 这里与<a
-href="https://lyhspace.com/blog/2023/07/18/SMNN-1/">空腔方法</a>第二小节中对
+\]</span> 这里与<a href="https://lyhspace.com/blog/2023/07/18/SMNN-1/">空腔方法</a>第二小节中对
 <span class="math inline">\(\prod_{i \in \partial a} \frac{1+\sigma_i
 m_{i \rightarrow a}}{2}\)</span>
-进行展开处理的操作类似，经过这个trick后可以得到 <span
-class="math display">\[
+进行展开处理的操作类似，经过这个trick后可以得到 <span class="math display">\[
 A_b^{+}=\cosh J_b\left(1+\tanh J_b \prod_{j \in \partial b \backslash i}
 m_{j \rightarrow b}\right)
 \]</span> 类似地，当 <span class="math inline">\(x_i=-1\)</span>
@@ -756,9 +657,7 @@ m_{j \rightarrow b}\right)
 m_{i\to a}=\sum_{x_i}x_iP_{i\to
 a}(x_i)=\sum_{x_i}x_i\frac{\exp\left[-\beta H_{i\to
 a}(x_i)\right]}{\sum_{x_i}\exp\left[-\beta H_{i\to a}(x_i)\right]}
-\]</span> 注意到我们这里定义的 <span
-class="math inline">\(A_b^\pm\)</span> 与<a
-href="https://lyhspace.com/blog/2023/07/18/SMNN-1/">空腔方法</a>第三小节空腔磁化强度部分的
+\]</span> 注意到我们这里定义的 <span class="math inline">\(A_b^\pm\)</span> 与<a href="https://lyhspace.com/blog/2023/07/18/SMNN-1/">空腔方法</a>第三小节空腔磁化强度部分的
 <span class="math inline">\(\Lambda_{b\to i}^\pm\)</span>
 一致，按照相同的步骤可得 <span class="math display">\[
 \begin{aligned}
@@ -778,8 +677,7 @@ b}\right)+\prod_{b \in \partial i \backslash a}\left(1-\tanh J_b
 \]</span> 令 <span class="math display">\[
 \tanh u_{b \rightarrow i}=\tanh J_b \prod_{j \in \partial b \backslash
 i} m_{j \rightarrow b}
-\]</span> 即得<a
-href="https://lyhspace.com/blog/2023/07/18/SMNN-1/">空腔方法</a>第三小节中空腔磁化强度的迭代方程：
+\]</span> 即得<a href="https://lyhspace.com/blog/2023/07/18/SMNN-1/">空腔方法</a>第三小节中空腔磁化强度的迭代方程：
 <span class="math display">\[
 \begin{aligned}
 &amp;m_{i \rightarrow a}  =\tanh \left(\sum_{b \in \partial i \backslash
@@ -788,25 +686,21 @@ a} u_{b \rightarrow i}\right) \\
 \backslash i} m_{j \rightarrow b}
 \end{aligned}
 \]</span> 从这里可以看到，Bethe Approximation与空腔方法是等价的。</p>
-<h2 id="bethe-approximation与mean-field-approximation">4.4 Bethe
-Approximation与Mean-Field Approximation</h2>
+<h2><span id="44-betheapproximation与mean-field-approximation">4.4 Bethe
+Approximation与Mean-Field Approximation</span></h2>
 <p>Mean-Field Approximation是忽略自旋变量间的所有相互作用，Bethe
 Approximation考虑了最近邻的相互作用，因此Bethe
 Approximation是比Mean-Field
 Approximation更高一级的近似。一般来说，高一级的近似是可以退化到低一级的近似的。本节将展示Bethe
 Approximation如何退化到Mean-Field Approximation。</p>
 <p>上一小节提到，Bethe Approximation与cavity
-method是等价的。因此我们继续从上一小节空腔的磁化强度出发，将 <span
-class="math inline">\(\sum_{b \in \partial i \backslash a} u_{b
+method是等价的。因此我们继续从上一小节空腔的磁化强度出发，将 <span class="math inline">\(\sum_{b \in \partial i \backslash a} u_{b
 \rightarrow i}\)</span> 改写为 <span class="math display">\[
 m_{i \rightarrow a}  =\tanh \left(\sum_{b \in \partial i} u_{b
 \rightarrow i}- u_{a\to i}\right)
 \]</span> 根据 <span class="math inline">\(m_i=\tanh\left( \sum_{b \in
-\partial i} u_{b \rightarrow i}\right)\)</span> （已令 <span
-class="math inline">\(\beta=1\)</span>），可以将 <span
-class="math inline">\(\sum_{b \in \partial i} u_{b \rightarrow
-i}\)</span> 反表示为 <span
-class="math inline">\(\tanh^{-1}(m_i)\)</span>。</p>
+\partial i} u_{b \rightarrow i}\right)\)</span> （已令 <span class="math inline">\(\beta=1\)</span>），可以将 <span class="math inline">\(\sum_{b \in \partial i} u_{b \rightarrow
+i}\)</span> 反表示为 <span class="math inline">\(\tanh^{-1}(m_i)\)</span>。</p>
 <p>再利用 <span class="math display">\[
 \tanh (x+y)=\frac{\tanh x+\tanh y}{1+\tanh x \tanh y}
 \]</span> 以及 <span class="math display">\[
@@ -822,8 +716,7 @@ i}\right) \\
 m_{j \rightarrow a}}{1-m_i \tanh \beta J_a \prod_{j \in \partial a
 \backslash i} m_{j \rightarrow a}},
 \end{aligned}
-\]</span> 考虑一个 <span class="math inline">\(i\)</span> 和 <span
-class="math inline">\(j\)</span>
+\]</span> 考虑一个 <span class="math inline">\(i\)</span> 和 <span class="math inline">\(j\)</span>
 的二体相互作用，上式可以改写为两个迭代式： <span class="math display">\[
 \begin{aligned}
 &amp; m_{i \rightarrow j}=\frac{m_i-\tanh \beta J_{i j} m_{j \rightarrow
@@ -831,13 +724,7 @@ i}}{1-m_i \tanh \beta J_{i j} m_{j \rightarrow i}} \\
 &amp; m_{j \rightarrow i}=\frac{m_j-\tanh \beta J_{i j} m_{i \rightarrow
 j}}{1-m_j \tanh \beta J_{i j} m_{i \rightarrow j}}
 \end{aligned}
-\]</span> 将两个式子互相带入，可分别得到 <span
-class="math inline">\(m_{i\to j}\)</span> 和 <span
-class="math inline">\(m_{j\to i}\)</span> 关于 <span
-class="math inline">\(m_i\)</span>、<span
-class="math inline">\(m_j\)</span> 及 <span
-class="math inline">\(J_{ij}\)</span> 的表达式，将其记为 <span
-class="math inline">\(f\)</span>，即 <span class="math display">\[
+\]</span> 将两个式子互相带入，可分别得到 <span class="math inline">\(m_{i\to j}\)</span> 和 <span class="math inline">\(m_{j\to i}\)</span> 关于 <span class="math inline">\(m_i\)</span>、<span class="math inline">\(m_j\)</span> 及 <span class="math inline">\(J_{ij}\)</span> 的表达式，将其记为 <span class="math inline">\(f\)</span>，即 <span class="math display">\[
 \begin{aligned}
 m_{i \rightarrow j} &amp; =f\left(m_i, m_j, \tanh \beta J_{i j}\right)
 \\
@@ -849,15 +736,13 @@ t(b-a t)}
 \]</span> （具体怎么算出来的，等以后再补充）</p>
 <p>对于 <span class="math inline">\(m_i=\tanh\left( \sum_{b \in \partial
 i} u_{b \rightarrow i}\right)\)</span>，根据（注意从这里开始不再忽略
-<span class="math inline">\(\beta\)</span>） <span
-class="math display">\[
+<span class="math inline">\(\beta\)</span>） <span class="math display">\[
 \tanh u_{b \rightarrow i}  =\tanh\beta J_b \prod_{j \in \partial b
 \backslash i} m_{j \rightarrow b}
 \]</span> 在二体相互作用中写为 <span class="math display">\[
 \tanh u_{j \rightarrow i}  =m_{i \rightarrow j} \tanh \beta J_{ij}
 \]</span> 其中，<span class="math inline">\(m_{i \rightarrow j}
-=f\left(m_i, m_j, \tanh \beta J_{i j}\right)\)</span>。因此 <span
-class="math display">\[
+=f\left(m_i, m_j, \tanh \beta J_{i j}\right)\)</span>。因此 <span class="math display">\[
 u_{j \rightarrow i}  =\tanh^{-1}\Big[ f\left(m_i, m_j, \tanh \beta J_{i
 j}\right) \tanh \beta J_{ij}\Big]
 \]</span> 磁化强度写为 <span class="math display">\[
@@ -885,22 +770,19 @@ j}\right)
 m_i=\tanh \left[\sum_{j \in \partial i}\left(\beta J_{i j} m_j-\beta^2
 J_{i j}^2\left(1-m_j^2\right) m_i\right)\right]
 \]</span>
-这个方程称为“TAP方程”，会在之后的一章中详细介绍。如果温度足够高，<span
-class="math inline">\(\beta^2\)</span> 也作为高阶小量忽视掉，则 <span
-class="math display">\[
+这个方程称为“TAP方程”，会在之后的一章中详细介绍。如果温度足够高，<span class="math inline">\(\beta^2\)</span> 也作为高阶小量忽视掉，则 <span class="math display">\[
 m_i=\tanh \left(\beta\sum_{j \in \partial i} J_{i j} m_j\right)
 \]</span> 这就是我们在第三小节中用Mean-Field
 Approximation得到的结果。</p>
 <p>从上面可以看到，Bethe Approximation在温度较高时可以退化为Mean-Field
 Approximation，因为高温实际上意味这自旋变量之间的相互作用减弱。</p>
-<h2 id="平均场逆伊辛问题">4.5 平均场逆伊辛问题</h2>
+<h2><span id="45-平均场逆伊辛问题">4.5 平均场逆伊辛问题</span></h2>
 <p>$ $</p>
 <p><strong>4.4、4.5小节参考文献：</strong>[8]</p>
-<h1 id="作业">6. 作业</h1>
-<h2 id="关于树状图中bethe-approximation对应的分布的问题">6.1
-关于树状图中Bethe Approximation对应的分布的问题</h2>
-<p>在本篇第四小节，我们使用对树状图划分区域的方式得到了Bethe自由能 <span
-class="math display">\[
+<h1><span id="6-作业">6. 作业</span></h1>
+<h2><span id="61关于树状图中bethe-approximation对应的分布的问题">6.1
+关于树状图中Bethe Approximation对应的分布的问题</span></h2>
+<p>在本篇第四小节，我们使用对树状图划分区域的方式得到了Bethe自由能 <span class="math display">\[
 \begin{aligned}
 F_{\text {Bethe }}
 = &amp; -\sum_a \sum_{x_a} b_a\left(\boldsymbol{x}_a\right) \ln
@@ -909,8 +791,7 @@ b_a\left(\boldsymbol{x}_a\right) \ln b_a\left(\boldsymbol{x}_a\right) \\
 &amp;-\sum_i\left(d_i-1\right) \sum_{x_i} b_i\left(x_i\right) \ln
 b_i\left(x_i\right)
 \end{aligned}
-\]</span> 实际上，根据以上结果，以及变分自由能的定义 <span
-class="math display">\[
+\]</span> 实际上，根据以上结果，以及变分自由能的定义 <span class="math display">\[
 F(b)=U(b)-H(b)
 \]</span> 其中，<span class="math inline">\(U(b)=\sum_x b(x) E(x) ,\;
 H(b)=-\sum_x b(x) \ln b(x)\)</span></p>
@@ -924,47 +805,38 @@ b_a\left(\boldsymbol{x}_a\right)}{\prod_i b_i\left(x_i\right)^{d_i-1}}
 证明 <span class="math inline">\(b_{BA}(x)\)</span> 是归一化的；(2)
 证明在无环的树状图中，<span class="math inline">\(b_{BA}(x)\)</span>
 是精确的</p>
-<h2 id="用belief-propagation求解sk-model中的-c_ij">6.2 用Belief
-Propagation求解SK model中的 <span
-class="math inline">\(C_{ij}\)</span></h2>
-<h2 id="用bethe-approximation求解inverse-ising-problem">6.3 用Bethe
-Approximation求解inverse Ising problem</h2>
-<h1 id="refenerce">Refenerce</h1>
-<p>[1] Yedidia, Jonathan S., William T. Freeman, and Yair Weiss. "<a
-target="_blank" rel="noopener" href="https://www.cs.huji.ac.il/course/2005/pmai/tirguls/TR2001-22.pdf">Understanding
+<h2><span id="62-用beliefpropagation求解sk-model中的-c_ij">6.2 用Belief
+Propagation求解SK model中的 <span class="math inline">\(C_{ij}\)</span></span></h2>
+<h2><span id="63-用betheapproximation求解inverse-ising-problem">6.3 用Bethe
+Approximation求解inverse Ising problem</span></h2>
+<h1><span id="refenerce">Refenerce</span></h1>
+<p>[1] Yedidia, Jonathan S., William T. Freeman, and Yair Weiss. "<a target="_blank" rel="noopener" href="https://www.cs.huji.ac.il/course/2005/pmai/tirguls/TR2001-22.pdf">Understanding
 belief propagation and its generalizations.</a>" <em>Exploring
 artificial intelligence in the new millennium</em> 8.236-239 (2003):
 0018-9448.</p>
-<p>[2] Yedidia, Jonathan S., William T. Freeman, and Yair Weiss. "<a
-target="_blank" rel="noopener" href="https://www.cs.princeton.edu/courses/archive/spring06/cos598C/papers/YedidaFreemanWeiss2004.pdf">Constructing
+<p>[2] Yedidia, Jonathan S., William T. Freeman, and Yair Weiss. "<a target="_blank" rel="noopener" href="https://www.cs.princeton.edu/courses/archive/spring06/cos598C/papers/YedidaFreemanWeiss2004.pdf">Constructing
 free-energy approximations and generalized belief propagation
 algorithms.</a>" <em>IEEE Transactions on information theory</em> 51.7
 (2005): 2282-2312.</p>
-<p>[3] Cowell, Robert. "<a
-target="_blank" rel="noopener" href="https://link.springer.com/chapter/10.1007/978-94-011-5014-9_2">Advanced
+<p>[3] Cowell, Robert. "<a target="_blank" rel="noopener" href="https://link.springer.com/chapter/10.1007/978-94-011-5014-9_2">Advanced
 inference in Bayesian networks.</a>" <em>Learning in graphical
 models</em>. Springer, Dordrecht, 1998. 27-49.</p>
-<p>[4] Heskes, Tom. "<a
-target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/document?repid=rep1&amp;type=pdf&amp;doi=98a0dd903f0eea9fc35bd5f163563252c118ca60">On
+<p>[4] Heskes, Tom. "<a target="_blank" rel="noopener" href="https://citeseerx.ist.psu.edu/document?repid=rep1&amp;type=pdf&amp;doi=98a0dd903f0eea9fc35bd5f163563252c118ca60">On
 the uniqueness of loopy belief propagation fixed points.</a>" <em>Neural
 Computation</em> 16.11 (2004): 2379-2413.</p>
-<p>[5] Yuille, Alan. "<a
-target="_blank" rel="noopener" href="https://www.cs.jhu.edu/~ayuille/JHUcourses/VisionAsBayesianInference2020/10/BeliefPropagationMFT.pdf">Belief
+<p>[5] Yuille, Alan. "<a target="_blank" rel="noopener" href="https://www.cs.jhu.edu/~ayuille/JHUcourses/VisionAsBayesianInference2020/10/BeliefPropagationMFT.pdf">Belief
 propagation, mean-field, and bethe approximations.</a>" <em>Dept. Stat.,
 Univ. California, Los Angeles, Los Angeles, CA, USA, Tech. Rep</em> 4
 (2010).</p>
-<p>[6] Yedidia, Jonathan S., William T. Freeman, and Yair Weiss. "<a
-target="_blank" rel="noopener" href="https://merl.com/publications/docs/TR2001-16.pdf">Bethe free
+<p>[6] Yedidia, Jonathan S., William T. Freeman, and Yair Weiss. "<a target="_blank" rel="noopener" href="https://merl.com/publications/docs/TR2001-16.pdf">Bethe free
 energy, Kikuchi approximations, and belief propagation algorithms.</a>"
 <em>Advances in neural information processing systems</em> 13 (2001):
 689.</p>
-<p>[7] Eric P. Xing "<a
-target="_blank" rel="noopener" href="https://www.cs.cmu.edu/~epxing/Class/10708-17/notes-17/10708-scribe-lecture12.pdf">Variational
+<p>[7] Eric P. Xing "<a target="_blank" rel="noopener" href="https://www.cs.cmu.edu/~epxing/Class/10708-17/notes-17/10708-scribe-lecture12.pdf">Variational
 Inference: Loopy Belief Propagation</a>" Probabilistic Graphical Models
 (10-708, Spring 2017) Lecture notes, School of Computer Science,
 Carnegie Mellon University</p>
-<p>[8] Ricci-Tersenghi, Federico. "<a
-target="_blank" rel="noopener" href="https://arxiv.org/abs/1112.4814">The Bethe approximation for
+<p>[8] Ricci-Tersenghi, Federico. "<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1112.4814">The Bethe approximation for
 solving the inverse Ising problem: a comparison with other inference
 methods.</a>" <em>Journal of Statistical Mechanics: Theory and
 Experiment</em> 2012.08 (2012): P08015.</p>
