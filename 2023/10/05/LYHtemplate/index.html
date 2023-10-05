@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="[object Object]">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lyhspace.com","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"right","display":"remove","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="受到余荫铠做的latex模板的启发，做了三个新的模板，另外把之前做的实验报告模板搬来，整合到一个类文件里了。 这套模板采用枫原万叶的配色，风格并不严肃。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个系列的latex模板，但是万叶配色">
+<meta property="og:url" content="http://lyhspace.com/blog/2023/10/05/LYHtemplate/index.html">
+<meta property="og:site_name" content="Li Yuhao&#39;s Blog">
+<meta property="og:description" content="受到余荫铠做的latex模板的启发，做了三个新的模板，另外把之前做的实验报告模板搬来，整合到一个类文件里了。 这套模板采用枫原万叶的配色，风格并不严肃。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://lyhspace.com/blog/img/LYHtemplate/draft.png">
+<meta property="og:image" content="http://lyhspace.com/blog/img/LYHtemplate/article.png">
+<meta property="og:image" content="http://lyhspace.com/blog/img/LYHtemplate/note.png">
+<meta property="og:image" content="http://lyhspace.com/blog/img/LYHtemplate/report.png">
+<meta property="article:published_time" content="2023-10-05T08:36:02.000Z">
+<meta property="article:modified_time" content="2023-10-05T09:15:11.586Z">
+<meta property="article:author" content="Li Yuhao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://lyhspace.com/blog/img/LYHtemplate/draft.png">
+
+
+<link rel="canonical" href="http://lyhspace.com/blog/2023/10/05/LYHtemplate/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://lyhspace.com/blog/2023/10/05/LYHtemplate/","path":"2023/10/05/LYHtemplate/","title":"一个系列的latex模板，但是万叶配色"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>一个系列的latex模板，但是万叶配色 | Li Yuhao's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Li Yuhao's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-home"><a href="https://www.lyhspace.com/" rel="section" target="_blank"><i class="fa fa-home fa-fw"></i>Home</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lyhspace.com/blog/2023/10/05/LYHtemplate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+      <meta itemprop="name" content="Li Yuhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Li Yuhao's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="一个系列的latex模板，但是万叶配色 | Li Yuhao's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          一个系列的latex模板，但是万叶配色
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-10-05 16:36:02 / 修改时间：17:15:11" itemprop="dateCreated datePublished" datetime="2023-10-05T16:36:02+08:00">2023-10-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>受到余荫铠做的latex模板的启发，做了三个新的模板，另外把之前做的实验报告模板搬来，整合到一个类文件里了。</p>
+<p>这套模板采用枫原万叶的配色，风格并不严肃。</p>
+<span id="more"></span>
+<h1><span id="快速浏览">快速浏览</span></h1>
+<p>这套模板共有
+<code>draft</code>、<code>article</code>、<code>note</code>、<code>report</code>
+四种类型。<code>draft</code>
+是一个非正式的、风格比较活泼的模板，可以用作平时的简单笔记或者随便写点什么。<code>article</code>
+是一个稍微正式一点的论文模板，但是风格不会像各种期刊的模板那么严肃，可以用来写文章。<code>note</code>
+是书籍类型的笔记模板，适合用于长篇的笔记。<code>report</code>
+是为近代物理实验写的模板，仍采用传统的黑白配色，没有大量使用其它颜色（因此可以放心写完给老师看）。</p>
+<figure>
+<img src="\blog\img\LYHtemplate\draft.png" alt="draft 模板预览">
+<figcaption aria-hidden="true">draft 模板预览</figcaption>
+</figure>
+<figure>
+<img src="\blog\img\LYHtemplate\article.png" alt="article 模板预览">
+<figcaption aria-hidden="true">article 模板预览</figcaption>
+</figure>
+<figure>
+<img src="\blog\img\LYHtemplate\note.png" alt="note 模板预览">
+<figcaption aria-hidden="true">note 模板预览</figcaption>
+</figure>
+<figure>
+<img src="\blog\img\LYHtemplate\report.png" alt="report 模板预览">
+<figcaption aria-hidden="true">report 模板预览</figcaption>
+</figure>
+<h1><span id="下载与使用">下载与使用</span></h1>
+<p><a href="http://lyhspace.com/blog/download/LYHtemplate.zip">点击下载</a>
+类文件和模板示例。压缩包中包含以下文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">LYHtemplate.cls    % 类文件</span><br><span class="line">reference.bib      % 参考文献信息，不建议改文件名</span><br><span class="line"></span><br><span class="line">% 文章中用到的封面和插图，换成你自己的即可</span><br><span class="line">cover1.png</span><br><span class="line">cover2.pdf</span><br><span class="line">picture1.png</span><br><span class="line"></span><br><span class="line">% 四种模板的示例文件及对应的pdf文件</span><br><span class="line">demo_draft.tex</span><br><span class="line">demo_draft.pdf</span><br><span class="line"></span><br><span class="line">demo_article.tex</span><br><span class="line">demo_article.pdf</span><br><span class="line"></span><br><span class="line">demo_note.tex</span><br><span class="line">demo_note.pdf</span><br><span class="line"></span><br><span class="line">demo_report.tex</span><br><span class="line">demo_report.pdf</span><br></pre></td></tr></table></figure>
+<p>如果你不会修改字体，<strong>建议使用 <a target="_blank" rel="noopener" href="https://texpage.com/">TexPage</a> 或 <a target="_blank" rel="noopener" href="https://www.overleaf.com">Overleaf</a> 编译。</strong> 我已经在
+TexPage 上做过字体测试，可以正常使用。</p>
+<blockquote>
+<p>如果你要在本地运行，可以在终端中使用以下命令查找本地字体对应的名字，并在<code>.cls</code>文件中修改
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fc-list -f &quot;%&#123;family&#125;\n&quot; :lang=zh-cn &gt;d:\zhfontlist.txt</span><br></pre></td></tr></table></figure>
+如果你看不懂这条命令，或者不会修改<code>.cls</code>文件，那还是建议使用
+<a target="_blank" rel="noopener" href="https://texpage.com/">TexPage</a> 或 <a target="_blank" rel="noopener" href="https://www.overleaf.com">Overleaf</a></p>
+</blockquote>
+<h1><span id="字体说明">字体说明</span></h1>
+<p>以后再说</p>
+<h1><span id="各模板的详细说明">各模板的详细说明</span></h1>
+<p>以后再说</p>
+<h1><span id="致谢">致谢</span></h1>
+<p>感谢 <span class="citation" data-cites="阿昆的科研日常">@阿昆的科研日常</span>
+设计的枫原万叶的配色表，感谢余荫铠（和chatGPT）提供的高亮公式框的环境，以及使用
+<code>fontawesome</code> 宏包的思路。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2023/09/27/Paper-1/" rel="prev" title="ReadingNote | 信息论视角下的复本自由能计算">
+                  <i class="fa fa-chevron-left"></i> ReadingNote | 信息论视角下的复本自由能计算
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Li Yuhao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
